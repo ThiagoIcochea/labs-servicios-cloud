@@ -8,3 +8,5 @@
 08-consola-observabilidad.png|Consola · Pestaña Observabilidad: uso de CPU de la VM
 09-consola-firewall.png|Consola · Regla de firewall ticochea-i1l1-http (tcp:80) aplicada a la etiqueta de red del lab
 10-navegador-pagina-nginx.png|Navegador · http://34.30.230.138 — página NGINX personalizada con nombre y código del alumno
+11-cloudshell-limpieza.png|Cloud Shell · ./lab down borra las 2 VMs y la regla de firewall del lab
+12-consola-sin-recursos.png|Consola · Instancias de VM vacía después de la limpieza (no queda nada cobrando)
