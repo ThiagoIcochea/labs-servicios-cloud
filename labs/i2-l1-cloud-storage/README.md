@@ -4,7 +4,7 @@
 
 ## Qué hace
 1. Crea el bucket `gs://<proyecto>-<prefijo>-i2l1` con etiquetas del alumno.
-2. Genera 3 objetos personalizados: `evidencia.txt`, `index.html` y una **imagen con tu nombre** (`credencial.png`).
+2. Genera 3 objetos con tus datos: `evidencia.txt`, `index.html` y una **imagen con tu nombre** (`credencial.png`).
 3. Los sube, descarga uno, los copia a `carpeta-<prefijo>/imagenes` y `carpeta-<prefijo>/documentos`.
 4. Lista el bucket y muestra los metadatos de un objeto.
 5. Hace **públicos** la página y la imagen y verifica la URL pública.

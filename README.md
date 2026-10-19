@@ -1,6 +1,6 @@
 # Laboratorios de Servicios Cloud — Sección 45104 (UTP)
 
-Laboratorios del **Google Cloud Engineering Certificate** replicados en un proyecto propio de Google Cloud, **personalizados por integrante** y con **limpieza automática** para no gastar créditos.
+Laboratorios del **Google Cloud Engineering Certificate** replicados en un proyecto propio de Google Cloud, **con los datos de cada integrante** y con **limpieza automática** para no gastar créditos.
 
 | | |
 |---|---|
@@ -75,7 +75,7 @@ bash scripts/preparar-proyecto.sh        # habilita las APIs (solo la primera ve
 ### 4. Ejecutar un lab, tomar evidencias y BORRAR
 ```bash
 ./lab <alumno> i1-l1 info    # leer qué hace el lab y qué capturas tomar
-./lab <alumno> i1-l1 up      # crear todo (personalizado con tu nombre)
+./lab <alumno> i1-l1 up      # crear todo (con tu nombre, código y sección)
 #   … toma tus capturas en Cloud Shell y en la consola …
 ./lab <alumno> i1-l1 down    # borrar TODO lo del lab
 ```
@@ -105,7 +105,7 @@ bash scripts/limpiar-todo.sh <prefijo>    # borra TODO lo que tenga tu prefijo
 │   ├── alumnos.csv          # integrantes, prefijos y correos
 │   └── curso.env            # curso, sección, docente, proyecto y región
 ├── lib/
-│   ├── comun.sh             # funciones comunes (banner, etiquetas, páginas personalizadas…)
+│   ├── comun.sh             # funciones comunes (banner, etiquetas, páginas con los datos del alumno…)
 │   └── terraform.sh         # utilidades para los labs de Terraform
 ├── labs/<lab>/              # up.sh, down.sh, README.md (+ código de funciones o Terraform)
 ├── alumnos/<alumno>/        # README con el avance y evidencias/ por lab

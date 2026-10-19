@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Insignia 3 - Lab 5: Managing Deployments Using Kubernetes Engine
-# Escalado, rolling update, rollback, canary y blue-green con NGINX + ConfigMaps personalizados.
+# Escalado, rolling update, rollback, canary y blue-green con NGINX + ConfigMaps con los datos del alumno.
 source "$(dirname "$0")/../../lib/comun.sh"
 banner "Insignia 3 · Lab 5 · Gestión de despliegues en GKE"
 habilitar_apis container.googleapis.com

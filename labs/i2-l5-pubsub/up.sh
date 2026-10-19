@@ -17,7 +17,7 @@ existe gcloud pubsub subscriptions describe "$S1" || \
   cmd gcloud pubsub subscriptions create "$S1" --topic "$T1" --labels "$ETIQUETAS" --ack-deadline 20
 cmd gcloud pubsub topics list-subscriptions "$T1"
 
-paso "3) Publicando mensajes personalizados"
+paso "3) Publicando mensajes con los datos del alumno"
 cmd gcloud pubsub topics publish "$T1" --message "Hola, soy $NOMBRE" --attribute "alumno=$P,seccion=$SECCION"
 cmd gcloud pubsub topics publish "$T1" --message "Código de estudiante: $CODIGO" --attribute "alumno=$P"
 cmd gcloud pubsub topics publish "$T1" --message "Curso $CURSO - Sección $SECCION" --attribute "alumno=$P"

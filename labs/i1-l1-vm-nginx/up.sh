@@ -4,7 +4,7 @@ source "$(dirname "$0")/../../lib/comun.sh"
 banner "Insignia 1 · Lab 1 · Creando una máquina virtual"
 habilitar_apis compute.googleapis.com
 
-VM1="${P}-i1l1-web"       # VM con NGINX y página personalizada
+VM1="${P}-i1l1-web"       # VM con NGINX y la página con los datos del alumno
 VM2="${P}-i1l1-gcelab2"   # VM creada solo con gcloud (segunda parte del lab)
 TAG="${P}-i1l1-http"
 

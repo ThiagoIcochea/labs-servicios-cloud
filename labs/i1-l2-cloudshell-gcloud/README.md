@@ -20,7 +20,7 @@
 - [ ] `gcloud auth list` y `gcloud config list` con tu cuenta.
 - [ ] La salida del SSH donde la VM imprime **tu nombre** desde los metadatos.
 - [ ] `cat` del archivo de evidencia.
-- [ ] **Compute Engine → Instancias de VM** con la VM y sus metadatos personalizados.
+- [ ] **Compute Engine → Instancias de VM** con la VM y sus metadatos `alumno` y `seccion`.
 
 ## Costo aproximado
 1 × e2-micro ~10 min ≈ **US$ 0.01**.

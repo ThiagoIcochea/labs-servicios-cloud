@@ -1,4 +1,4 @@
-"""Cloud Function HTTP (2.ª gen) personalizada para el alumno."""
+"""Cloud Function HTTP (2.ª gen) que responde con los datos del alumno."""
 import datetime
 import json
 import os

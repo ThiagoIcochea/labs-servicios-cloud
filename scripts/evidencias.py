@@ -48,8 +48,14 @@ def ahora():
     return datetime.datetime.now(zoneinfo.ZoneInfo("America/Lima")).strftime("%Y-%m-%d %H:%M")
 
 
-def marcar(img, a, lab, pie):
-    """Agrega una franja superior con el pie de foto y una inferior con la marca personal."""
+def hora_de(archivo):
+    """Hora exacta en que se tomó la captura (fecha de modificación del archivo original)."""
+    t = datetime.datetime.fromtimestamp(os.path.getmtime(archivo), zoneinfo.ZoneInfo("America/Lima"))
+    return t.strftime("%d/%m/%Y %H:%M:%S")
+
+
+def marcar(img, a, lab, pie, hora=None):
+    """Agrega una franja superior con el pie de foto y una inferior con los datos del alumno y la hora."""
     img = img.convert("RGB")
     w, h = img.size
     alto_sup, alto_inf = 46, 40
@@ -59,8 +65,12 @@ def marcar(img, a, lab, pie):
     d.rectangle([0, 0, w, alto_sup], fill=(32, 33, 36))
     d.text((16, 11), pie, font=fuente(20, True), fill="white")
     d.rectangle([0, h + alto_sup, w, h + alto_sup + alto_inf], fill=AZUL)
-    marca = f"{a['nombre']}  ·  {a['codigo']}  ·  Servicios Cloud - Sección 45104  ·  {lab}  ·  {ahora()}"
+    marca = f"{a['nombre']}  ·  {a['codigo']}  ·  Servicios Cloud - Sección 45104  ·  {lab}"
     d.text((16, h + alto_sup + 9), marca, font=fuente(18), fill="white")
+    reloj = f"{hora or ahora()}  (hora de Lima)"
+    rw = d.textlength(reloj, font=fuente(18, True))
+    d.rectangle([w - rw - 30, h + alto_sup, w, h + alto_sup + alto_inf], fill=(13, 71, 161))
+    d.text((w - rw - 15, h + alto_sup + 9), reloj, font=fuente(18, True), fill="white")
     # sello en la esquina superior derecha
     sello = f"{a['codigo']}"
     tw = d.textlength(sello, font=fuente(18, True))
@@ -73,9 +83,13 @@ def captura(slug, lab, origen, nombre, pie):
     a = alumno(slug)
     d = carpeta(slug, lab)
     destino = os.path.join(d, f"{nombre}.png")
-    marcar(Image.open(origen), a, lab, pie).save(destino, optimize=True)
-    with open(os.path.join(d, "capturas.md"), "a", encoding="utf-8") as f:
-        f.write(f"{nombre}.png|{pie}\n")
+    hora = hora_de(origen)
+    marcar(Image.open(origen), a, lab, pie, hora).save(destino, optimize=True)
+    idx = os.path.join(d, "capturas.md")
+    previas = [l for l in open(idx, encoding="utf-8")] if os.path.exists(idx) else []
+    previas = [l for l in previas if not l.startswith(f"{nombre}.png|")]
+    previas.append(f"{nombre}.png|{pie}|{hora}\n")
+    open(idx, "w", encoding="utf-8").writelines(sorted(previas))
     print(destino)
 
 
@@ -95,14 +109,14 @@ def video(slug, lab):
     a = alumno(slug)
     d = carpeta(slug, lab)
     idx = os.path.join(d, "capturas.md")
-    capturas = [l.rstrip("\n").split("|", 1) for l in open(idx, encoding="utf-8")] if os.path.exists(idx) else []
+    capturas = [l.rstrip("\n").split("|") for l in open(idx, encoding="utf-8")] if os.path.exists(idx) else []
     titulo = open(os.path.join(RAIZ, "labs", lab, "README.md"), encoding="utf-8").readline().strip("# \n")
     with tempfile.TemporaryDirectory() as tmp:
         W, H = 1536, 822
         portada(a, lab, titulo, W, H).save(f"{tmp}/000.png")
         n = 1
         vistos = set()
-        for archivo, _ in capturas:
+        for archivo, *_ in capturas:
             if archivo in vistos or not os.path.exists(os.path.join(d, archivo)):
                 continue
             vistos.add(archivo)
@@ -125,7 +139,7 @@ def gif(slug, lab, nombre, frames):
     d = carpeta(slug, lab)
     imgs = []
     for i, f in enumerate(frames):
-        im = marcar(Image.open(f), a, lab, f"Recorrido en la consola · paso {i + 1} de {len(frames)}")
+        im = marcar(Image.open(f), a, lab, f"Recorrido en la consola · paso {i + 1} de {len(frames)}", hora_de(f))
         im.thumbnail((1100, 1100))
         imgs.append(im.convert("P", palette=Image.Palette.ADAPTIVE, colors=128))
     salida = os.path.join(d, f"{nombre}.gif")

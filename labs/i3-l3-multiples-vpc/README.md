@@ -3,7 +3,7 @@
 **Equivale a:** *Multiple VPC Networks*.
 
 ## Qué hace
-1. Crea 2 VPC personalizadas: `<prefijo>-managementnet` (1 subred) y `<prefijo>-privatenet` (2 subredes en 2 regiones).
+1. Crea 2 VPC en modo manual (custom): `<prefijo>-managementnet` (1 subred) y `<prefijo>-privatenet` (2 subredes en 2 regiones).
 2. Crea reglas de firewall ICMP/SSH/RDP en cada una.
 3. Crea 5 VMs: dos en la red `default` (en 2 regiones), una en cada VPC nueva y una **appliance con 2 interfaces de red** (una en cada VPC).
 4. Prueba la conectividad con `ping`:

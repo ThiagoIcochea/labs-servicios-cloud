@@ -8,7 +8,7 @@ CL="${P}-i3l6-gke"; DEV_ID="${P}-i3l6-dev"; DEV="${DEV_ID}@${PROJECT_ID}.iam.gse
 EXI_ID="${P}-i3l6-ex"; EXI="${EXI_ID}@${PROJECT_ID}.iam.gserviceaccount.com"
 NOMBRE_UPTIME="Uptime ${P} i3l6 - ${NOMBRE}"; IP=""
 
-paso "Tarea 1) VPC personalizada $VPC con subredes de producción y desarrollo"
+paso "Tarea 1) VPC en modo manual $VPC con subredes de producción y desarrollo"
 existe gcloud compute networks describe "$VPC" || cmd gcloud compute networks create "$VPC" --subnet-mode custom
 existe gcloud compute networks subnets describe "$SUB_PROD" --region "$REGION" || \
   cmd gcloud compute networks subnets create "$SUB_PROD" --network "$VPC" --region "$REGION" --range 10.10.0.0/24 \

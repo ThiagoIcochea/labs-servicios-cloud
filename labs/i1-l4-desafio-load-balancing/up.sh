@@ -12,7 +12,7 @@ existe gcloud compute instances describe "$JUMP" --zone "$ZONA" || \
   cmd gcloud compute instances create "$JUMP" --zone "$ZONA" --machine-type e2-micro \
     --image-family debian-12 --image-project debian-cloud --boot-disk-size 10GB --labels "$ETIQUETAS"
 
-paso "Tarea 2) Plantilla de instancias con NGINX personalizado"
+paso "Tarea 2) Plantilla de instancias con servidor web y los datos del alumno"
 startup_python "DESAFÍO · Insignia Implement Load Balancing on Compute Engine" \
   "Backend del MIG autoescalable ${MIG} (mín ${MIN}, máx ${MAX}) detrás del balanceador HTTP ${P}-desafio-lb" > "$TRABAJO/web.sh"
 existe gcloud compute instance-templates describe "$PLANT" || \

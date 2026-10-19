@@ -68,7 +68,7 @@ if [[ -z "$(gcloud alpha monitoring policies list --filter="displayName=\"$NOMBR
   cmd gcloud alpha monitoring policies create --policy-from-file "$TRABAJO/alerta.json"
 fi
 
-paso "6) Dashboard personalizado: $NOMBRE_DASH"
+paso "6) Dashboard del alumno: $NOMBRE_DASH"
 cat > "$TRABAJO/dashboard.json" <<JSON
 {
   "displayName": "$NOMBRE_DASH",

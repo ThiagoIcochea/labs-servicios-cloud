@@ -107,7 +107,7 @@ esperar_http() { # $1 = URL, $2 = texto esperado, $3 = intentos (10 s c/u)
   return 0
 }
 
-# --- Página HTML personalizada (evidencia) -------------------------------------
+# --- Página HTML con los datos del alumno (evidencia) -------------------------------------
 # Genera un startup-script que instala NGINX y publica una página con los datos
 # del alumno. $1 = título del lab, $2 = detalle (opcional)
 startup_nginx() {

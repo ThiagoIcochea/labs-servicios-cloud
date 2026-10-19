@@ -5,13 +5,13 @@ banner "Insignia 3 · Lab 3 · Redes VPC múltiples"
 habilitar_apis compute.googleapis.com
 MGMT="${P}-managementnet"; PRIV="${P}-privatenet"
 
-paso "1) Red personalizada $MGMT con la subred ${MGMT}-sub-us (10.130.0.0/20)"
+paso "1) Red VPC (subredes en modo manual) $MGMT con la subred ${MGMT}-sub-us (10.130.0.0/20)"
 existe gcloud compute networks describe "$MGMT" || cmd gcloud compute networks create "$MGMT" --subnet-mode custom \
   --description "VPC de administración - lab i3-l3 de $NOMBRE"
 existe gcloud compute networks subnets describe "${MGMT}-sub-us" --region "$REGION" || \
   cmd gcloud compute networks subnets create "${MGMT}-sub-us" --network "$MGMT" --region "$REGION" --range 10.130.0.0/20
 
-paso "2) Red personalizada $PRIV con 2 subredes (172.16.0.0/24 en $REGION y 172.20.0.0/20 en $REGION2)"
+paso "2) Red VPC (subredes en modo manual) $PRIV con 2 subredes (172.16.0.0/24 en $REGION y 172.20.0.0/20 en $REGION2)"
 existe gcloud compute networks describe "$PRIV" || cmd gcloud compute networks create "$PRIV" --subnet-mode custom \
   --description "VPC privada - lab i3-l3 de $NOMBRE"
 existe gcloud compute networks subnets describe "${PRIV}-sub-us" --region "$REGION" || \

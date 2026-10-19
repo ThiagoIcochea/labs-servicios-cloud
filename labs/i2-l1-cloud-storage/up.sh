@@ -10,7 +10,7 @@ existe gcloud storage buckets describe "$BUCKET" || \
   cmd gcloud storage buckets create "$BUCKET" --location US --no-uniform-bucket-level-access
 cmd gcloud storage buckets update "$BUCKET" --update-labels "$ETIQUETAS"
 
-paso "2) Generando los objetos de evidencia personalizados"
+paso "2) Generando los objetos de evidencia con los datos del alumno"
 texto_evidencia "$TRABAJO/evidencia.txt" "Insignia 2 · Lab 1 · Cloud Storage"
 cat > "$TRABAJO/index.html" <<HTML
 <!doctype html><html lang="es"><head><meta charset="utf-8"><title>Cloud Storage - ${NOMBRE}</title></head>
