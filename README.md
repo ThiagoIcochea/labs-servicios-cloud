@@ -17,7 +17,6 @@ Laboratorios del **Google Cloud Engineering Certificate** replicados en un proye
 | Thiago Paolo Icochea Rodriguez (U22330428) | [alumnos/thiago-icochea](alumnos/thiago-icochea) | `ticochea` |
 | Carlos Enrique Giussepe Gonzales Aguilar | [alumnos/carlos-gonzales](alumnos/carlos-gonzales) | `cgonzales` |
 | Eddyson Cesar Huamani Pereira | [alumnos/eddyson-huamani](alumnos/eddyson-huamani) | `ehuamani` |
-| Emmanuel Misael Torres Centeno | [alumnos/emmanuel-torres](alumnos/emmanuel-torres) | `etorres` |
 | Huber Eduardo Remuzgo Tovar | [alumnos/huber-remuzgo](alumnos/huber-remuzgo) | `hremuzgo` |
 | Karen Meylin Quispe Saavedra | [alumnos/karen-quispe](alumnos/karen-quispe) | `kquispe` |
 
