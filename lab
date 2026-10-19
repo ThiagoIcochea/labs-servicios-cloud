@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+# ---------------------------------------------------------------------------
+# Lanzador de laboratorios - Servicios Cloud 45104 (UTP)
+#
+#   ./lab alumnos                       -> lista de integrantes
+#   ./lab lista                         -> lista de los 21 labs
+#   ./lab <alumno> <lab> up             -> crea el lab personalizado
+#   ./lab <alumno> <lab> down           -> borra TODO lo que creó el lab
+#   ./lab <alumno> <lab> info           -> muestra la guía del lab
+#
+# <lab> puede ser el id completo (i1-l1-vm-nginx) o solo el inicio (i1-l1).
+# Ejemplo:  ./lab thiago-icochea i1-l1 up
+# ---------------------------------------------------------------------------
+set -Eeuo pipefail
+RAIZ="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+uso() { sed -n '3,12p' "$0" | sed 's/^# \{0,1\}//'; exit 1; }
+
+case "${1:-}" in
+  ""|-h|--help) uso ;;
+  alumnos)
+    grep -v '^#' "$RAIZ/config/alumnos.csv" | awk -F';' '{printf "%-18s %-10s %s\n",$1,$2,$3}'
+    exit 0 ;;
+  lista)
+    for d in "$RAIZ"/labs/*/; do
+      id="$(basename "$d")"
+      titulo="$(head -1 "$d/README.md" | sed 's/^# //')"
+      printf "%-34s %s\n" "$id" "$titulo"
+    done
+    exit 0 ;;
+esac
+
+ALUMNO="$1"; LAB="${2:-}"; ACCION="${3:-up}"
+[[ -z "$LAB" ]] && uso
+grep -qE "^${ALUMNO};" "$RAIZ/config/alumnos.csv" || { echo "Alumno '$ALUMNO' no existe. Usa: ./lab alumnos"; exit 1; }
+
+coincidencias=( "$RAIZ"/labs/"$LAB"* )
+[[ -d "${coincidencias[0]}" ]] || { echo "Lab '$LAB' no existe. Usa: ./lab lista"; exit 1; }
+[[ ${#coincidencias[@]} -gt 1 ]] && { echo "'$LAB' es ambiguo: ${coincidencias[*]##*/}"; exit 1; }
+DIR_LAB="${coincidencias[0]}"
+LAB_ID="$(basename "$DIR_LAB")"
+export ALUMNO LAB_ID
+
+case "$ACCION" in
+  info) cat "$DIR_LAB/README.md"; exit 0 ;;
+  up|down) ;;
+  *) uso ;;
+esac
+
+# Registro de la ejecución dentro de la carpeta del alumno (evidencia en texto)
+DIR_EVID="$RAIZ/alumnos/$ALUMNO/evidencias/$LAB_ID"
+mkdir -p "$DIR_EVID"
+LOG="$DIR_EVID/salida-$ACCION-$(TZ=America/Lima date +%Y%m%d-%H%M%S).log"
+echo "Registro de esta ejecución: ${LOG#"$RAIZ"/}"
+bash "$DIR_LAB/$ACCION.sh" 2>&1 | tee "$LOG"
+exit "${PIPESTATUS[0]}"
