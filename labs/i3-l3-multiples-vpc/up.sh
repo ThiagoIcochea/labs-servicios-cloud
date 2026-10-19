@@ -68,11 +68,17 @@ p 'privatenet-us-vm    (otra VPC -> FALLA)' $PRIV_INT
 " || true
 
 paso "6) Desde la VM appliance (2 interfaces) sí se llega a ambas VPC por IP interna"
-gcloud compute ssh "${P}-vm-appliance" --zone "$ZONA" --tunnel-through-iap --quiet --strict-host-key-checking=no --command "
+CMD_APPLIANCE="
 ip -br addr | grep -v '^lo'
 p(){ if ping -c 2 -W 2 \$2 >/dev/null 2>&1; then echo \"[OK]    \$1 (\$2)\"; else echo \"[FALLA] \$1 (\$2)\"; fi; }
 p 'privatenet-us-vm (nic0)' $PRIV_INT
 p 'managementnet-us-vm (nic1, sin ruta por defecto)' $MGMT_INT
 echo 'Tabla de rutas:'; ip route
-" || true
+"
+# La VM recién creada puede tardar en aceptar la clave SSH: se reintenta hasta 4 veces
+for intento in 1 2 3 4; do
+  gcloud compute ssh "${P}-vm-appliance" --zone "$ZONA" --tunnel-through-iap --quiet \
+    --strict-host-key-checking=no --command "$CMD_APPLIANCE" 2>/dev/null && break
+  aviso "La VM appliance aún no acepta SSH (intento $intento/4). Reintento en 20 s…"; sleep 20
+done
 fin_lab
