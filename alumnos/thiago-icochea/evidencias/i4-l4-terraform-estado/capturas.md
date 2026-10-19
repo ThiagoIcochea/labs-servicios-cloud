@@ -1,0 +1,6 @@
+01-cloudshell-estado-local.png|Estado local: terraform apply crea el bucket del estado con las etiquetas del alumno|19/10/2026 07:00:39|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792411239716-134.jpg
+02-cloudshell-estado-remoto.png|Estado migrado al backend gcs, refresh tras un cambio fuera de Terraform e inicio de la importación|19/10/2026 06:59:54|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792411194985-131.jpg
+03-cloudshell-generate-config.png|terraform plan -generate-config-out escribe el código de la VM importada|19/10/2026 07:00:39|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792411239716-135.jpg
+04-cloudshell-state-remoto.png|VM importada en el estado y archivo de estado remoto (serial 4) leído desde el bucket|19/10/2026 06:59:54|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792411194986-132.jpg
+05-consola-tfstate.png|Consola Cloud Storage: default.tfstate en terraform/estado/ticochea|19/10/2026 07:00:39|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792411239716-136.jpg
+06-consola-vm-importada.png|Consola Compute Engine: VM ticochea-i4l4-importada (creada con gcloud, ahora gestionada por Terraform)|19/10/2026 07:01:04|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792411264499-137.jpg
