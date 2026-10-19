@@ -1,0 +1,5 @@
+01-cloudshell-rol-personalizado.png|Creación del rol personalizado «Auditor de Thiago Paolo Icochea Rodriguez» con 5 permisos|19/10/2026 05:16:15|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792404975733-48.jpg
+02-cloudshell-auditor-lee.png|Rol asignado: el auditor (cuenta de servicio) lee el informe con los datos del alumno|19/10/2026 05:15:00|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792404900204-47.jpg
+03-cloudshell-revocado.png|Rol revocado: el auditor recibe 403 y lista de roles personalizados del proyecto|19/10/2026 05:16:15|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792404975734-49.jpg
+04-consola-rol.png|Consola IAM: detalle del rol personalizado con la descripción del alumno|19/10/2026 05:13:48|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792404828187-43.jpg
+05-consola-cuentas-servicio.png|Consola IAM: cuenta de servicio «Auditor del lab i3-l1 de Thiago Paolo Icochea Rodriguez»|19/10/2026 05:14:12|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792404852835-45.jpg
