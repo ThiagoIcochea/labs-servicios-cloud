@@ -6,7 +6,7 @@ TF_VERSION="${TF_VERSION:-1.9.8}"
 # de HashiCorp en ~/.local/bin (queda guardado en el $HOME de Cloud Shell para los demás labs).
 asegurar_terraform() {
   export PATH="$HOME/.local/bin:$PATH"
-  if ! command -v terraform >/dev/null 2>&1 || ! terraform version >/dev/null 2>&1; then
+  if ! terraform version 2>/dev/null | grep -q "^Terraform v"; then  # Cloud Shell trae un "terraform" que solo muestra instrucciones
     echo "Instalando Terraform $TF_VERSION en ~/.local/bin…"
     mkdir -p "$HOME/.local/bin"
     local zip; zip="$(mktemp -d)/tf.zip"
