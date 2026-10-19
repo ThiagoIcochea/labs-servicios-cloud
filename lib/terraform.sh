@@ -1,6 +1,21 @@
 #!/usr/bin/env bash
 # Funciones para los labs de Terraform (se carga después de comun.sh)
 TF_DIR="$TRABAJO/tf"
+TF_VERSION="${TF_VERSION:-1.9.8}"
+# Cloud Shell ya no trae Terraform preinstalado: si falta, se descarga el binario oficial
+# de HashiCorp en ~/.local/bin (queda guardado en el $HOME de Cloud Shell para los demás labs).
+asegurar_terraform() {
+  export PATH="$HOME/.local/bin:$PATH"
+  if ! command -v terraform >/dev/null 2>&1 || ! terraform version >/dev/null 2>&1; then
+    echo "Instalando Terraform $TF_VERSION en ~/.local/bin…"
+    mkdir -p "$HOME/.local/bin"
+    local zip; zip="$(mktemp -d)/tf.zip"
+    curl -fsSL -o "$zip" "https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
+    unzip -o -q "$zip" -d "$HOME/.local/bin"
+    chmod +x "$HOME/.local/bin/terraform"
+  fi
+}
+asegurar_terraform
 preparar_tf() { # copia la plantilla del lab a la carpeta de trabajo del alumno
   mkdir -p "$TF_DIR"
   cp -r "$1"/. "$TF_DIR"/
