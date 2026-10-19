@@ -67,7 +67,7 @@ for i in $(seq 1 30); do
   sleep 10
 done
 paso "Mensaje publicado en Pub/Sub por la función"
-gcloud pubsub subscriptions pull "$SUB" --auto-ack --limit 5 --format='value(message.data.decode(base64))' || true
+gcloud pubsub subscriptions pull "$SUB" --auto-ack --limit 5 --format='value(message.data.decode(base64).decode(utf-8))' || true
 
 paso "Tarea 5) Quitar el acceso del ingeniero anterior ($EX)"
 existe gcloud iam service-accounts describe "$EX" || \
