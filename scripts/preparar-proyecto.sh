@@ -18,6 +18,9 @@ gcloud config set compute/zone us-central1-a >/dev/null
 echo
 echo "Cuota de CPUs en us-central1 (la prueba gratuita limita los vCPU encendidos a la vez):"
 gcloud compute regions describe us-central1 --flatten=quotas \
-  --filter="quotas.metric=(CPUS,IN_USE_ADDRESSES,STATIC_ADDRESSES,SSD_TOTAL_GB)" \
-  --format="table(quotas.metric,quotas.usage,quotas.limit)"
+  --format="csv[no-heading](quotas.metric,quotas.usage,quotas.limit)" \
+  | grep -E '^(CPUS|IN_USE_ADDRESSES|STATIC_ADDRESSES|SSD_TOTAL_GB),' | column -t -s, || true
+echo "CPUs a nivel de proyecto (todas las regiones):"
+gcloud compute project-info describe --flatten=quotas \
+  --format="csv[no-heading](quotas.metric,quotas.usage,quotas.limit)" | grep -E '^CPUS_ALL_REGIONS,' | column -t -s, || true
 echo "Listo. Proyecto preparado."
