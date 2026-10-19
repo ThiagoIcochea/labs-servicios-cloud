@@ -55,9 +55,11 @@ ID_VM="$(gcloud compute instances describe "$VM" --zone "$ZONA" --format='value(
 esperar_http "http://$IP" "$NOMBRE" 40
 
 paso "2) Métrica basada en logs: $METRICA (cuenta visitas con el user-agent del alumno)"
-FILTRO="resource.type=\"gce_instance\" AND resource.labels.instance_id=\"$ID_VM\" AND log_id(\"apache_access\") AND jsonPayload.userAgent:\"Evidencia-$P\""
+FILTRO="resource.type=\"gce_instance\" AND resource.labels.instance_id=\"$ID_VM\" AND log_id(\"apache_access\") AND httpRequest.userAgent:\"Evidencia-$P\""
 if ! existe gcloud logging metrics describe "$METRICA"; then
   cmd gcloud logging metrics create "$METRICA" --description "Visitas al Apache de $NOMBRE (lab i3-l4)" --log-filter "$FILTRO"
+else
+  cmd gcloud logging metrics update "$METRICA" --description "Visitas al Apache de $NOMBRE (lab i3-l4)" --log-filter "$FILTRO"
 fi
 
 paso "3) Generando 3 minutos de tráfico con el user-agent 'Evidencia-$P'"
@@ -67,7 +69,7 @@ for i in $(seq 1 180); do curl -s -o /dev/null -A "Evidencia-$P ($NOMBRE)" "http
 paso "4) Leyendo los logs de acceso de Apache recolectados por el Ops Agent"
 sleep 30
 gcloud logging read "$FILTRO" --limit 5 --freshness 15m \
-  --format='table(timestamp,jsonPayload.method,jsonPayload.requestUrl:label=URL,jsonPayload.status:label=ESTADO,jsonPayload.userAgent:label=USER_AGENT)' || true
+  --format='table(timestamp,httpRequest.requestMethod:label=METODO,httpRequest.requestUrl:label=URL,httpRequest.status:label=ESTADO,httpRequest.userAgent:label=USER_AGENT)' || true
 
 paso "5) Dashboard: $NOMBRE_DASH"
 cat > "$TRABAJO/dashboard.json" <<JSON
