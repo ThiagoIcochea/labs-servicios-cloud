@@ -27,8 +27,14 @@ cmd gcloud pubsub topics publish "$T1" --message "Mensaje enviado el $(ahora)" -
 paso "4) Leyendo un solo mensaje (pull sin --limit)"
 cmd gcloud pubsub subscriptions pull "$S1" --auto-ack
 
-paso "5) Leyendo el resto de mensajes con --limit"
-sleep 3
-cmd gcloud pubsub subscriptions pull "$S1" --auto-ack --limit 10 \
-  --format='table(message.data.decode(base64):label=MENSAJE,message.attributes.alumno:label=ALUMNO,message.publishTime:label=PUBLICADO)'
+paso "5) Leyendo el resto de mensajes con --limit (se repite hasta vaciar la suscripción)"
+for intento in 1 2 3 4; do
+  sleep 3
+  salida="$(gcloud pubsub subscriptions pull "$S1" --auto-ack --limit 10 \
+    --format='value(message.data.decode(base64).decode(utf-8),message.attributes.alumno,message.publishTime)' || true)"
+  [[ -z "$salida" ]] && break
+  echo -e "${C_AZ}\$ gcloud pubsub subscriptions pull $S1 --auto-ack --limit 10   (lectura $intento)${C_NO}"
+  printf '%s\n' "$salida" | awk -F'\t' '{printf "  MENSAJE: %-50s ALUMNO: %-10s PUBLICADO: %s\n", $1, $2, $3}'
+done
+ok "Suscripción vacía: todos los mensajes de ${NOMBRE} fueron leídos"
 fin_lab
