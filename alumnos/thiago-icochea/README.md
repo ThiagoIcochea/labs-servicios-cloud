@@ -31,7 +31,7 @@
 | `i3-l1` | [Insignia 3 · Lab 1 — IAM en la nube (roles predefinidos y personalizados)](../../labs/i3-l1-iam-roles/README.md) | ✅ Completado (5 capturas, 2 videos) | [evidencias](evidencias/i3-l1-iam-roles/) |
 | `i3-l2` | [Insignia 3 · Lab 2 — SQL para BigQuery y Cloud SQL](../../labs/i3-l2-sql-bigquery-cloudsql/README.md) | ✅ Completado (8 capturas, 2 videos) | [evidencias](evidencias/i3-l2-sql-bigquery-cloudsql/) |
 | `i3-l3` | [Insignia 3 · Lab 3 — Redes VPC múltiples](../../labs/i3-l3-multiples-vpc/README.md) | ✅ Completado (6 capturas, 2 videos) | [evidencias](evidencias/i3-l3-multiples-vpc/) |
-| `i3-l4` | [Insignia 3 · Lab 4 — Monitoreo: Ops Agent, logs y métricas](../../labs/i3-l4-monitoreo-logs/README.md) | ⬜ Pendiente | [evidencias](evidencias/i3-l4-monitoreo-logs/) |
+| `i3-l4` | [Insignia 3 · Lab 4 — Monitoreo: Ops Agent, logs y métricas](../../labs/i3-l4-monitoreo-logs/README.md) | ✅ Completado (8 capturas, 2 videos) | [evidencias](evidencias/i3-l4-monitoreo-logs/) |
 | `i3-l5` | [Insignia 3 · Lab 5 — Gestión de despliegues en Kubernetes Engine](../../labs/i3-l5-gke-deployments/README.md) | ⬜ Pendiente | [evidencias](evidencias/i3-l5-gke-deployments/) |
 | `i3-l6` | [Insignia 3 · Desafío — Develop your Google Cloud Network](../../labs/i3-l6-desafio-network/README.md) | ⬜ Pendiente | [evidencias](evidencias/i3-l6-desafio-network/) |
 | `i4-l1` | [Insignia 4 · Lab 1 — Fundamentos de Terraform](../../labs/i4-l1-terraform-fundamentos/README.md) | ⬜ Pendiente | [evidencias](evidencias/i4-l1-terraform-fundamentos/) |
