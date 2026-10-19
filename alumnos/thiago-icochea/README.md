@@ -36,7 +36,7 @@
 | `i3-l6` | [Insignia 3 · Desafío — Develop your Google Cloud Network](../../labs/i3-l6-desafio-network/README.md) | ✅ Completado (8 capturas, 2 videos) | [evidencias](evidencias/i3-l6-desafio-network/) |
 | `i4-l1` | [Insignia 4 · Lab 1 — Fundamentos de Terraform](../../labs/i4-l1-terraform-fundamentos/README.md) | ✅ Completado (5 capturas, 2 videos) | [evidencias](evidencias/i4-l1-terraform-fundamentos/) |
 | `i4-l2` | [Insignia 4 · Lab 2 — Infraestructura como código con Terraform](../../labs/i4-l2-terraform-iac/README.md) | ✅ Completado (6 capturas, 2 videos) | [evidencias](evidencias/i4-l2-terraform-iac/) |
-| `i4-l3` | [Insignia 4 · Lab 3 — Módulos de Terraform](../../labs/i4-l3-terraform-modulos/README.md) | ⬜ Pendiente | [evidencias](evidencias/i4-l3-terraform-modulos/) |
+| `i4-l3` | [Insignia 4 · Lab 3 — Módulos de Terraform](../../labs/i4-l3-terraform-modulos/README.md) | ✅ Completado (7 capturas, 2 videos) | [evidencias](evidencias/i4-l3-terraform-modulos/) |
 | `i4-l4` | [Insignia 4 · Lab 4 — Administración del estado de Terraform](../../labs/i4-l4-terraform-estado/README.md) | ⬜ Pendiente | [evidencias](evidencias/i4-l4-terraform-estado/) |
 | `i4-l5` | [Insignia 4 · Desafío — Build Infrastructure with Terraform](../../labs/i4-l5-desafio-terraform/README.md) | ⬜ Pendiente | [evidencias](evidencias/i4-l5-desafio-terraform/) |
 
