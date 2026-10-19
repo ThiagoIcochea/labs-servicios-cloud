@@ -2,7 +2,7 @@
 # Insignia 3 - Lab 3: Redes VPC múltiples
 source "$(dirname "$0")/../../lib/comun.sh"
 banner "Insignia 3 · Lab 3 · Redes VPC múltiples"
-habilitar_apis compute.googleapis.com
+habilitar_apis compute.googleapis.com iap.googleapis.com
 MGMT="${P}-managementnet"; PRIV="${P}-privatenet"
 
 paso "1) Red VPC (subredes en modo manual) $MGMT con la subred ${MGMT}-sub-us (10.130.0.0/20)"
@@ -40,9 +40,10 @@ crear_vm "${P}-mynet-us-vm" "$ZONA" --network default
 crear_vm "${P}-mynet-notus-vm" "$ZONA2" --network default
 crear_vm "${P}-managementnet-us-vm" "$ZONA" --subnet "${MGMT}-sub-us"
 crear_vm "${P}-privatenet-us-vm" "$ZONA" --subnet "${PRIV}-sub-us"
-# VM con 2 interfaces de red (una e2-micro admite hasta 2 NIC)
+# VM con 2 interfaces de red (una e2-micro admite hasta 2 NIC). Va SIN IP externa porque la
+# prueba gratuita solo permite 4 IPs externas por región; se entra por SSH a través de IAP.
 crear_vm "${P}-vm-appliance" "$ZONA" \
-  --network-interface "subnet=${PRIV}-sub-us" --network-interface "subnet=${MGMT}-sub-us"
+  --network-interface "subnet=${PRIV}-sub-us,no-address" --network-interface "subnet=${MGMT}-sub-us,no-address"
 sleep 45
 gcloud compute instances list --filter="labels.alumno=$P AND labels.lab=$LAB_CORTO" --sort-by ZONE \
   --format='table(name,zone.basename(),networkInterfaces[].network.basename().list():label=REDES,networkInterfaces[].networkIP.list():label=IP_INTERNAS,networkInterfaces[0].accessConfigs[0].natIP:label=IP_EXTERNA)'
@@ -67,7 +68,7 @@ p 'privatenet-us-vm    (otra VPC -> FALLA)' $PRIV_INT
 " || true
 
 paso "6) Desde la VM appliance (2 interfaces) sí se llega a ambas VPC por IP interna"
-gcloud compute ssh "${P}-vm-appliance" --zone "$ZONA" --quiet --strict-host-key-checking=no --command "
+gcloud compute ssh "${P}-vm-appliance" --zone "$ZONA" --tunnel-through-iap --quiet --strict-host-key-checking=no --command "
 ip -br addr | grep -v '^lo'
 p(){ if ping -c 2 -W 2 \$2 >/dev/null 2>&1; then echo \"[OK]    \$1 (\$2)\"; else echo \"[FALLA] \$1 (\$2)\"; fi; }
 p 'privatenet-us-vm (nic0)' $PRIV_INT
