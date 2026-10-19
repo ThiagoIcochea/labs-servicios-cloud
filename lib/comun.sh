@@ -136,7 +136,8 @@ h1{color:#1a73e8;margin-top:0}td{padding:6px 12px}td:first-child{font-weight:bol
 <tr><td>Servidor</td><td>\$HOST (\$ZONA_VM) - IP interna \$IP_INT</td></tr>
 <tr><td>Detalle</td><td>${detalle}</td></tr>
 <tr><td>Generado</td><td>$(ahora)</td></tr>
-</table><p style='margin-top:24px;color:#888;font-size:13px'>${MARCA} · ${CURSO} ${SECCION}</p></div></body></html>
+<tr><td>Hora del equipo</td><td id='reloj' style='font-weight:bold;color:#1a73e8'></td></tr>
+</table><script>function r(){var d=new Date();document.getElementById('reloj').textContent=d.toLocaleDateString('es-PE')+' '+d.toLocaleTimeString('es-PE')}r();setInterval(r,1000)</script><p style='margin-top:24px;color:#888;font-size:13px'>${MARCA} · ${CURSO} ${SECCION}</p></div></body></html>
 HTML
 systemctl restart nginx
 EOF

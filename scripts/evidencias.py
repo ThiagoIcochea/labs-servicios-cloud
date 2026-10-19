@@ -58,6 +58,10 @@ def marcar(img, a, lab, pie, hora=None):
     """Agrega una franja superior con el pie de foto y una inferior con los datos del alumno y la hora."""
     img = img.convert("RGB")
     w, h = img.size
+    # Oculta el avatar de la cuenta (esquina superior derecha de la consola / Cloud Shell)
+    from PIL import ImageFilter
+    caja = (w - 72, 0, w, 50)
+    img.paste(img.crop(caja).filter(ImageFilter.GaussianBlur(10)), caja[:2])
     alto_sup, alto_inf = 46, 40
     lienzo = Image.new("RGB", (w, h + alto_sup + alto_inf), "white")
     lienzo.paste(img, (0, alto_sup))
