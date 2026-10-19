@@ -5,7 +5,7 @@ source "$RAIZ/lib/terraform.sh"
 banner "Insignia 4 · Lab 1 · Fundamentos de Terraform"
 habilitar_apis compute.googleapis.com
 
-paso "1) Terraform ya viene instalado en Cloud Shell"
+paso "1) Versión de Terraform (se instala sola en ~/.local/bin si Cloud Shell no la trae)"
 terraform version
 
 paso "2) Archivos de configuración (main.tf, variables.tf, outputs.tf y terraform.tfvars con tus datos)"
