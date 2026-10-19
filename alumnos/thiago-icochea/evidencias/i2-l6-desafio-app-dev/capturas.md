@@ -1,0 +1,6 @@
+01-cloudshell-bucket-topico-permisos.png|Tareas 1-3: bucket, tópico Pub/Sub, permisos de Eventarc y despliegue de la función|19/10/2026 05:06:07|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792404367940-37.jpg
+02-cloudshell-miniatura-iam.png|Tareas 4-5: miniatura creada, mensaje Pub/Sub con los datos del alumno y retiro del ingeniero anterior|19/10/2026 05:09:29|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792404569434-39.jpg
+03-cloudshell-logs.png|Logs de la función: miniatura creada para Thiago Paolo Icochea Rodriguez · U22330428|19/10/2026 05:09:20|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792404560972-38.jpg
+04-consola-bucket.png|Consola: bucket con la imagen original y la miniatura 64x64 generada|19/10/2026 05:10:27|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792404627804-40.jpg
+05-consola-activador.png|Consola: activador de Eventarc (google.cloud.storage.object.v1.finalized) sobre el bucket del alumno|19/10/2026 05:10:27|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792404627805-42.jpg
+06-consola-objeto.png|Consola: detalle del objeto foto-ticochea.png (no público)|19/10/2026 05:10:27|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792404627805-41.jpg

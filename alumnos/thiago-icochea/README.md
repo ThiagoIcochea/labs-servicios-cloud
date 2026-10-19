@@ -27,7 +27,7 @@
 | `i2-l3` | [Insignia 2 · Lab 3 — Cloud Monitoring](../../labs/i2-l3-cloud-monitoring/README.md) | ✅ Completado (7 capturas, 2 videos) | [evidencias](evidencias/i2-l3-cloud-monitoring/) |
 | `i2-l4` | [Insignia 2 · Lab 4 — Cloud Functions (línea de comandos)](../../labs/i2-l4-cloud-functions/README.md) | ✅ Completado (7 capturas, 2 videos) | [evidencias](evidencias/i2-l4-cloud-functions/) |
 | `i2-l5` | [Insignia 2 · Lab 5 — Pub/Sub (línea de comandos)](../../labs/i2-l5-pubsub/README.md) | ✅ Completado (5 capturas, 2 videos) | [evidencias](evidencias/i2-l5-pubsub/) |
-| `i2-l6` | [Insignia 2 · Desafío — Set Up an App Dev Environment on Google Cloud](../../labs/i2-l6-desafio-app-dev/README.md) | ⬜ Pendiente | [evidencias](evidencias/i2-l6-desafio-app-dev/) |
+| `i2-l6` | [Insignia 2 · Desafío — Set Up an App Dev Environment on Google Cloud](../../labs/i2-l6-desafio-app-dev/README.md) | ✅ Completado (6 capturas, 2 videos) | [evidencias](evidencias/i2-l6-desafio-app-dev/) |
 | `i3-l1` | [Insignia 3 · Lab 1 — IAM en la nube (roles predefinidos y personalizados)](../../labs/i3-l1-iam-roles/README.md) | ⬜ Pendiente | [evidencias](evidencias/i3-l1-iam-roles/) |
 | `i3-l2` | [Insignia 3 · Lab 2 — SQL para BigQuery y Cloud SQL](../../labs/i3-l2-sql-bigquery-cloudsql/README.md) | ⬜ Pendiente | [evidencias](evidencias/i3-l2-sql-bigquery-cloudsql/) |
 | `i3-l3` | [Insignia 3 · Lab 3 — Redes VPC múltiples](../../labs/i3-l3-multiples-vpc/README.md) | ⬜ Pendiente | [evidencias](evidencias/i3-l3-multiples-vpc/) |
