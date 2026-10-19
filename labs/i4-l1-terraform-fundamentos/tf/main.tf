@@ -36,6 +36,7 @@ resource "google_compute_instance" "vm_terraform" {
 
   metadata = {
     alumno  = var.nombre
+    codigo  = var.codigo
     seccion = var.seccion
   }
 }

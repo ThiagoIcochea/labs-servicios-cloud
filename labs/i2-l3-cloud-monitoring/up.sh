@@ -49,7 +49,7 @@ paso "5) Política de alerta: tráfico de red de la VM > 500 bytes/s durante 1 m
 cat > "$TRABAJO/alerta.json" <<JSON
 {
   "displayName": "$NOMBRE_ALERTA",
-  "documentation": {"content": "Alerta creada por $NOMBRE - $CURSO, sección $SECCION. Lab i2-l3.", "mimeType": "text/markdown"},
+  "documentation": {"content": "Alerta creada por $MARCA - $CURSO, sección $SECCION. Lab i2-l3.", "mimeType": "text/markdown"},
   "combiner": "OR",
   "conditions": [{
     "displayName": "Trafico de red de $VM",
@@ -73,7 +73,7 @@ cat > "$TRABAJO/dashboard.json" <<JSON
 {
   "displayName": "$NOMBRE_DASH",
   "mosaicLayout": {"columns": 12, "tiles": [
-    {"width": 12, "height": 2, "widget": {"title": "Datos del alumno", "text": {"content": "**$NOMBRE** · $CURSO · Sección $SECCION · Docente: $DOCENTE · VM: $VM", "format": "MARKDOWN"}}},
+    {"width": 12, "height": 2, "widget": {"title": "Datos del alumno", "text": {"content": "**$NOMBRE** · Código $CODIGO · $CURSO · Sección $SECCION · Docente: $DOCENTE · VM: $VM", "format": "MARKDOWN"}}},
     {"yPos": 2, "width": 6, "height": 4, "widget": {"title": "CPU de $VM (Ops Agent)", "xyChart": {"dataSets": [{"timeSeriesQuery": {"timeSeriesFilter": {
       "filter": "metric.type=\"agent.googleapis.com/cpu/utilization\" resource.type=\"gce_instance\" resource.label.\"instance_id\"=\"$ID_VM\"",
       "aggregation": {"alignmentPeriod": "60s", "perSeriesAligner": "ALIGN_MEAN", "crossSeriesReducer": "REDUCE_MEAN"}}}, "plotType": "LINE"}]}}},

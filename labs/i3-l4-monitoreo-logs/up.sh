@@ -16,7 +16,7 @@ apt-get update -y && apt-get install -y apache2
 cat > /var/www/html/index.html <<HTML
 <!doctype html><html lang="es"><head><meta charset="utf-8"><title>Apache monitoreado</title></head>
 <body style="font-family:Arial;background:#e6f4ea;padding:40px"><h1 style="color:#188038">Apache monitoreado con Ops Agent</h1>
-<p><b>Alumno:</b> ${NOMBRE}<br><b>Curso:</b> ${CURSO} - Sección ${SECCION}<br><b>Docente:</b> ${DOCENTE}<br>
+<p><b>Alumno:</b> ${NOMBRE}<br><b>Código:</b> ${CODIGO}<br><b>Curso:</b> ${CURSO} - Sección ${SECCION}<br><b>Docente:</b> ${DOCENTE}<br>
 <b>Lab:</b> Insignia 3 · Lab 4<br><b>Servidor:</b> \$(hostname)</p></body></html>
 HTML
 curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
@@ -74,7 +74,7 @@ cat > "$TRABAJO/dashboard.json" <<JSON
 {
   "displayName": "$NOMBRE_DASH",
   "mosaicLayout": {"columns": 12, "tiles": [
-    {"width": 12, "height": 2, "widget": {"title": "Alumno", "text": {"content": "**$NOMBRE** · $CURSO · Sección $SECCION · Insignia 3 Lab 4 · VM $VM", "format": "MARKDOWN"}}},
+    {"width": 12, "height": 2, "widget": {"title": "Alumno", "text": {"content": "**$NOMBRE** · Código $CODIGO · $CURSO · Sección $SECCION · Insignia 3 Lab 4 · VM $VM", "format": "MARKDOWN"}}},
     {"yPos": 2, "width": 6, "height": 4, "widget": {"title": "Visitas (métrica basada en logs $METRICA)", "xyChart": {"dataSets": [{"timeSeriesQuery": {"timeSeriesFilter": {
       "filter": "metric.type=\"logging.googleapis.com/user/$METRICA\" resource.type=\"gce_instance\"",
       "aggregation": {"alignmentPeriod": "60s", "perSeriesAligner": "ALIGN_RATE", "crossSeriesReducer": "REDUCE_SUM"}}}, "plotType": "STACKED_BAR"}]}}},

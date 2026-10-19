@@ -2,6 +2,7 @@
 
 | | |
 |---|---|
+| **Código de estudiante** | U22330428 |
 | **Curso** | Servicios Cloud — Sección 45104 |
 | **Docente** | Eleodoro Orbegoso Carrera |
 | **Programa** | Google Cloud Engineering Certificate (4 insignias, 21 labs) |

@@ -31,7 +31,7 @@ cmd gcloud container clusters get-credentials "$CL" --zone "$ZONA"
 
 paso "Tarea 3) Desplegando la aplicación en el namespace 'produccion'"
 kubectl create namespace produccion --dry-run=client -o yaml | kubectl apply -f -
-kubectl -n produccion create configmap pagina --from-literal=index.html="<!doctype html><html lang='es'><head><meta charset='utf-8'></head><body style='font-family:Arial;padding:40px;background:#fce8e6'><h1 style='color:#c5221f'>DESAFÍO · Develop your Google Cloud Network</h1><p><b>Alumno:</b> $NOMBRE<br><b>Curso:</b> $CURSO - Sección $SECCION<br><b>Docente:</b> $DOCENTE<br><b>Red:</b> $VPC / $SUB_PROD · Clúster $CL</p></body></html>" --dry-run=client -o yaml | kubectl apply -f -
+kubectl -n produccion create configmap pagina --from-literal=index.html="<!doctype html><html lang='es'><head><meta charset='utf-8'></head><body style='font-family:Arial;padding:40px;background:#fce8e6'><h1 style='color:#c5221f'>DESAFÍO · Develop your Google Cloud Network</h1><p><b>Alumno:</b> $NOMBRE<br><b>Código:</b> $CODIGO<br><b>Curso:</b> $CURSO - Sección $SECCION<br><b>Docente:</b> $DOCENTE<br><b>Red:</b> $VPC / $SUB_PROD · Clúster $CL</p></body></html>" --dry-run=client -o yaml | kubectl apply -f -
 cat <<YAML | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment

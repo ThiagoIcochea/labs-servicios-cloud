@@ -9,6 +9,7 @@ variable "zona" {
 }
 variable "prefijo" { type = string }
 variable "nombre" { type = string }
+variable "codigo" { type = string }
 variable "seccion" { type = string }
 variable "etapa" {
   description = "1 = crear, 2 = cambio en el lugar (tags/metadatos), 3 = cambio destructivo (imagen)"

@@ -19,7 +19,7 @@ cat <<HTML
 <!doctype html><html lang="es"><head><meta charset="utf-8"><title>$1</title></head>
 <body style="font-family:Arial;background:$2;color:#fff;padding:40px">
 <h1>Versión $1 · $3</h1>
-<p><b>Alumno:</b> $NOMBRE<br><b>Curso:</b> $CURSO - Sección $SECCION<br><b>Docente:</b> $DOCENTE<br>
+<p><b>Alumno:</b> $NOMBRE<br><b>Código:</b> $CODIGO<br><b>Curso:</b> $CURSO - Sección $SECCION<br><b>Docente:</b> $DOCENTE<br>
 <b>Clúster:</b> $CL · Insignia 3 Lab 5</p></body></html>
 HTML
 }

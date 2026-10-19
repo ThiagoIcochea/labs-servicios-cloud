@@ -19,9 +19,11 @@ if [[ -z "$_linea" ]]; then
   echo "ERROR: el alumno '$ALUMNO' no está en config/alumnos.csv" >&2
   exit 1
 fi
-IFS=';' read -r ALUMNO_SLUG P NOMBRE CORREO <<<"$_linea"
+IFS=';' read -r ALUMNO_SLUG P NOMBRE CODIGO CORREO <<<"$_linea"
+CODIGO="${CODIGO:-sin código}"
+MARCA="${NOMBRE} · ${CODIGO}"   # marca personal que aparece en todas las evidencias
 CORREO="${CORREO:-$(gcloud config get-value account 2>/dev/null || true)}"
-export ALUMNO_SLUG P NOMBRE CORREO
+export ALUMNO_SLUG P NOMBRE CODIGO CORREO MARCA
 
 # --- Proyecto y ubicación -----------------------------------------------------
 PROJECT_ID="${PROJECT_ID:-$(gcloud config get-value project 2>/dev/null || true)}"
@@ -56,6 +58,7 @@ banner() {
   echo "║  $titulo"
   echo "╠${linea}"
   echo "║  Alumno   : $NOMBRE"
+  echo "║  Código   : $CODIGO"
   echo "║  Curso    : $CURSO - Sección $SECCION ($UNIVERSIDAD)"
   echo "║  Docente  : $DOCENTE"
   echo "║  Proyecto : $PROJECT_ID    Lab: $LAB_ID"
@@ -125,6 +128,7 @@ h1{color:#1a73e8;margin-top:0}td{padding:6px 12px}td:first-child{font-weight:bol
 <body><div class="card"><h1>${titulo}</h1>
 <table>
 <tr><td>Alumno</td><td>${NOMBRE}</td></tr>
+<tr><td>Código</td><td>${CODIGO}</td></tr>
 <tr><td>Curso</td><td>${CURSO} - Sección ${SECCION}</td></tr>
 <tr><td>Docente</td><td>${DOCENTE}</td></tr>
 <tr><td>Programa</td><td>${PROGRAMA}</td></tr>
@@ -132,10 +136,34 @@ h1{color:#1a73e8;margin-top:0}td{padding:6px 12px}td:first-child{font-weight:bol
 <tr><td>Servidor</td><td>\$HOST (\$ZONA_VM) - IP interna \$IP_INT</td></tr>
 <tr><td>Detalle</td><td>${detalle}</td></tr>
 <tr><td>Generado</td><td>$(ahora)</td></tr>
-</table></div></body></html>
+</table><p style='margin-top:24px;color:#888;font-size:13px'>${MARCA} · ${CURSO} ${SECCION}</p></div></body></html>
 HTML
 systemctl restart nginx
 EOF
+}
+
+# Igual que startup_nginx pero SIN instalar paquetes: sirve la página con python3
+# (Debian 12 ya lo trae). Sirve para VMs SIN IP externa: la prueba gratuita solo
+# permite 4 IPs externas en uso por región.
+startup_python() {
+  startup_nginx "$@" | sed -e '/^apt-get/d' -e 's#/var/www/html#/opt/web#g' \
+    -e 's#^cat > /opt/web/index.html#mkdir -p /opt/web \&\& cat > /opt/web/index.html#' \
+    -e '/^systemctl restart nginx/d'
+  cat <<'UNIDAD'
+cat > /etc/systemd/system/web-lab.service <<UNIT
+[Unit]
+Description=Pagina del lab
+After=network-online.target
+[Service]
+WorkingDirectory=/opt/web
+ExecStart=/usr/bin/python3 -m http.server 80
+Restart=always
+[Install]
+WantedBy=multi-user.target
+UNIT
+systemctl daemon-reload
+systemctl enable --now web-lab.service
+UNIDAD
 }
 
 # Escribe un archivo de texto de evidencia con los datos del alumno
@@ -145,6 +173,7 @@ texto_evidencia() { # $1 = archivo, $2 = título
  ${2}
 --------------------------------------------------------------
  Alumno   : ${NOMBRE}
+ Código   : ${CODIGO}
  Curso    : ${CURSO} - Sección ${SECCION}
  Docente  : ${DOCENTE}
  Proyecto : ${PROJECT_ID}

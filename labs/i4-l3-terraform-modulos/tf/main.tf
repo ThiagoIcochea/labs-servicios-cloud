@@ -31,5 +31,6 @@ module "sitio_web" {
   project_id = var.project_id
   prefijo    = var.prefijo
   nombre     = var.nombre
+  codigo     = var.codigo
   seccion    = var.seccion
 }

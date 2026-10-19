@@ -19,6 +19,7 @@ cmd gcloud pubsub topics list-subscriptions "$T1"
 
 paso "3) Publicando mensajes personalizados"
 cmd gcloud pubsub topics publish "$T1" --message "Hola, soy $NOMBRE" --attribute "alumno=$P,seccion=$SECCION"
+cmd gcloud pubsub topics publish "$T1" --message "Código de estudiante: $CODIGO" --attribute "alumno=$P"
 cmd gcloud pubsub topics publish "$T1" --message "Curso $CURSO - Sección $SECCION" --attribute "alumno=$P"
 cmd gcloud pubsub topics publish "$T1" --message "Docente: $DOCENTE" --attribute "alumno=$P"
 cmd gcloud pubsub topics publish "$T1" --message "Mensaje enviado el $(ahora)" --attribute "alumno=$P"

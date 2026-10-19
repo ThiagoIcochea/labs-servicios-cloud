@@ -9,6 +9,7 @@ FN="${P}-i2l4-hola"
 paso "1) Variables de entorno de la función con los datos del alumno"
 cat > "$TRABAJO/env.yaml" <<YAML
 NOMBRE: "$NOMBRE"
+CODIGO: "$CODIGO"
 CURSO: "$CURSO"
 SECCION: "$SECCION"
 DOCENTE: "$DOCENTE"

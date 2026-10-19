@@ -16,19 +16,19 @@ cat > "$TRABAJO/index.html" <<HTML
 <!doctype html><html lang="es"><head><meta charset="utf-8"><title>Cloud Storage - ${NOMBRE}</title></head>
 <body style="font-family:Arial;background:#fef7e0;padding:40px">
 <h1 style="color:#e37400">Objeto público en Cloud Storage</h1>
-<p><b>Alumno:</b> ${NOMBRE}<br><b>Curso:</b> ${CURSO} - Sección ${SECCION}<br>
+<p><b>Alumno:</b> ${NOMBRE}<br><b>Código:</b> ${CODIGO}<br><b>Curso:</b> ${CURSO} - Sección ${SECCION}<br>
 <b>Docente:</b> ${DOCENTE}<br><b>Bucket:</b> ${BUCKET}<br><b>Fecha:</b> $(ahora)</p></body></html>
 HTML
 # Imagen con el nombre del alumno (ImageMagick viene en Cloud Shell; si no, se usa SVG)
 if command -v convert >/dev/null; then
   convert -size 900x300 xc:'#1a73e8' -fill white -gravity center -pointsize 34 \
-    -annotate +0-40 "$NOMBRE" -pointsize 24 -annotate +0+30 "$CURSO - Sección $SECCION" \
-    -pointsize 18 -annotate +0+80 "Insignia 2 · Lab 1 · $(ahora)" "$TRABAJO/credencial.png"
+    -annotate +0-60 "$NOMBRE" -pointsize 26 -annotate +0-10 "Código $CODIGO" -pointsize 24 -annotate +0+35 "$CURSO - Sección $SECCION" \
+    -pointsize 18 -annotate +0+85 "Insignia 2 · Lab 1 · $(ahora)" "$TRABAJO/credencial.png"
   IMG="credencial.png"
 else
   cat > "$TRABAJO/credencial.svg" <<SVG
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="300"><rect width="900" height="300" fill="#1a73e8"/>
-<text x="450" y="130" font-size="34" fill="#fff" text-anchor="middle" font-family="Arial">${NOMBRE}</text>
+<text x="450" y="130" font-size="34" fill="#fff" text-anchor="middle" font-family="Arial">${MARCA}</text>
 <text x="450" y="190" font-size="24" fill="#fff" text-anchor="middle" font-family="Arial">${CURSO} - Sección ${SECCION}</text></svg>
 SVG
   IMG="credencial.svg"

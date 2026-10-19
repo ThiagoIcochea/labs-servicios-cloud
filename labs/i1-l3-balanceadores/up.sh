@@ -9,11 +9,11 @@ TAM_MIG="${TAM_MIG:-2}"   # VMs del grupo administrado detrás del balanceador H
 # ---------------- Parte A: balanceador de carga de RED (L4) ----------------
 paso "A1) Creando $NUM_WWW servidores web ${P}-www1..${P}-www${NUM_WWW}"
 for i in $(seq 1 "$NUM_WWW"); do
-  startup_nginx "Balanceador de RED · Servidor www$i" "Detrás del target pool ${P}-www-pool (balanceo de capa 4)" > "$TRABAJO/www$i.sh"
+  startup_python "Balanceador de RED · Servidor www$i" "Detrás del target pool ${P}-www-pool (balanceo de capa 4)" > "$TRABAJO/www$i.sh"
   existe gcloud compute instances describe "${P}-www$i" --zone "$ZONA" || \
     cmd gcloud compute instances create "${P}-www$i" --zone "$ZONA" --machine-type e2-micro \
       --image-family debian-12 --image-project debian-cloud --boot-disk-size 10GB \
-      --tags "${P}-network-lb-tag" --labels "$ETIQUETAS" \
+      --tags "${P}-network-lb-tag" --labels "$ETIQUETAS" --no-address \
       --metadata-from-file startup-script="$TRABAJO/www$i.sh" --async
 done
 sleep 30
@@ -39,10 +39,10 @@ IP_RED="$(gcloud compute forwarding-rules describe "${P}-www-rule" --region "$RE
 
 # ---------------- Parte B: balanceador de carga HTTP (L7) -------------------
 paso "B1) Plantilla de instancias y grupo administrado (MIG) de $TAM_MIG VMs"
-startup_nginx "Balanceador HTTP · Backend del MIG" "Grupo administrado ${P}-lb-backend-group detrás de ${P}-web-map-http (capa 7)" > "$TRABAJO/backend.sh"
+startup_python "Balanceador HTTP · Backend del MIG" "Grupo administrado ${P}-lb-backend-group detrás de ${P}-web-map-http (capa 7)" > "$TRABAJO/backend.sh"
 existe gcloud compute instance-templates describe "${P}-lb-backend-template" || \
   cmd gcloud compute instance-templates create "${P}-lb-backend-template" \
-    --network default --tags "${P}-allow-health-check" --machine-type e2-micro \
+    --network default --no-address --tags "${P}-allow-health-check" --machine-type e2-micro \
     --image-family debian-12 --image-project debian-cloud --boot-disk-size 10GB \
     --labels "$ETIQUETAS" --metadata-from-file startup-script="$TRABAJO/backend.sh"
 existe gcloud compute instance-groups managed describe "${P}-lb-backend-group" --zone "$ZONA" || \

@@ -10,6 +10,7 @@ region     = "$REGION"
 zona       = "$ZONA"
 prefijo    = "$P"
 nombre     = "$NOMBRE"
+codigo     = "$CODIGO"
 seccion    = "$SECCION"
 EOF2
   echo "Carpeta de Terraform: $TF_DIR"

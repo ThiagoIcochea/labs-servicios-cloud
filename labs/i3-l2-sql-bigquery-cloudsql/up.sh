@@ -20,7 +20,7 @@ fi
 # ----------------------------- Parte 1: BigQuery ---------------------------
 paso "1) Consulta básica: SELECT ... LIMIT sobre london_bicycles.cycle_hire"
 cmd bq query --use_legacy_sql=false --max_rows=5 \
-  "SELECT end_station_name, duration, '$NOMBRE' AS alumno FROM \`bigquery-public-data.london_bicycles.cycle_hire\` LIMIT 5"
+  "SELECT end_station_name, duration, '$NOMBRE' AS alumno, '$CODIGO' AS codigo FROM \`bigquery-public-data.london_bicycles.cycle_hire\` LIMIT 5"
 
 paso "2) GROUP BY + COUNT + ORDER BY: estaciones de inicio más usadas"
 cmd bq query --use_legacy_sql=false --max_rows=10 \
@@ -28,7 +28,7 @@ cmd bq query --use_legacy_sql=false --max_rows=10 \
 
 paso "3) Dataset propio $DS y tablas de resultados"
 existe bq show "$PROJECT_ID:$DS" || cmd bq --location US mk -d --label "alumno:$P" --label "seccion:$SECCION" \
-  --description "Dataset del lab i3-l2 de $NOMBRE - $CURSO sección $SECCION" "$PROJECT_ID:$DS"
+  --description "Dataset del lab i3-l2 de $MARCA - $CURSO sección $SECCION" "$PROJECT_ID:$DS"
 cmd bq query --use_legacy_sql=false --replace --destination_table "$PROJECT_ID:$DS.inicio_estaciones" \
   "SELECT start_station_name, COUNT(*) AS num FROM \`bigquery-public-data.london_bicycles.cycle_hire\` GROUP BY start_station_name ORDER BY num DESC"
 cmd bq query --use_legacy_sql=false --replace --destination_table "$PROJECT_ID:$DS.fin_estaciones" \
@@ -61,9 +61,10 @@ USE bike;
 CREATE TABLE IF NOT EXISTS london1 (start_station_name VARCHAR(255), num INT);
 CREATE TABLE IF NOT EXISTS london2 (end_station_name VARCHAR(255), num INT);
 TRUNCATE london1; TRUNCATE london2;
-CREATE TABLE IF NOT EXISTS evidencia (alumno VARCHAR(120), curso VARCHAR(60), seccion VARCHAR(10), docente VARCHAR(80), fecha DATETIME);
+DROP TABLE IF EXISTS evidencia;
+CREATE TABLE evidencia (alumno VARCHAR(120), codigo VARCHAR(12), curso VARCHAR(60), seccion VARCHAR(10), docente VARCHAR(80), fecha DATETIME);
 DELETE FROM evidencia;
-INSERT INTO evidencia VALUES ('$NOMBRE', '$CURSO', '$SECCION', '$DOCENTE', NOW());
+INSERT INTO evidencia VALUES ('$NOMBRE', '$CODIGO', '$CURSO', '$SECCION', '$DOCENTE', NOW());
 SQL
 ok "Base de datos y tablas creadas"
 

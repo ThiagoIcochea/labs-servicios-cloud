@@ -17,7 +17,7 @@ paso "2) Creando el ROL PERSONALIZADO $ROL (solo lectura de buckets y VMs)"
 ESTADO="$(gcloud iam roles describe "$ROL" --project "$PROJECT_ID" --format='value(deleted)' 2>/dev/null || echo NOEXISTE)"
 if [[ "$ESTADO" == "NOEXISTE" ]]; then
   cmd gcloud iam roles create "$ROL" --project "$PROJECT_ID" \
-    --title "Auditor de $NOMBRE" --description "Rol personalizado del lab i3-l1 - $CURSO sección $SECCION" \
+    --title "Auditor de $NOMBRE" --description "Rol personalizado del lab i3-l1 - $MARCA - $CURSO sección $SECCION" \
     --permissions storage.buckets.list,storage.objects.list,storage.objects.get,compute.instances.list,compute.zones.list \
     --stage GA
 else

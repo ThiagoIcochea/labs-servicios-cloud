@@ -30,7 +30,7 @@ done
 paso "Tarea 3) Cloud Function $FN que crea miniaturas y publica en $TOPICO (tarda ~3 min)"
 cat > "$TRABAJO/env.yaml" <<YAML
 TOPICO: "projects/$PROJECT_ID/topics/$TOPICO"
-NOMBRE: "$NOMBRE"
+NOMBRE: "$MARCA"
 YAML
 cmd gcloud functions deploy "$FN" --gen2 --region "$REGION" --runtime python312 \
   --source "$(dirname "$0")/funcion" --entry-point crear_miniatura \
@@ -49,10 +49,10 @@ cmd gcloud functions deploy "$FN" --gen2 --region "$REGION" --runtime python312 
 paso "Tarea 4) Subiendo una imagen de prueba con el nombre del alumno"
 if command -v convert >/dev/null; then
   convert -size 640x400 gradient:'#34a853'-'#1a73e8' -fill white -gravity center -pointsize 36 \
-    -annotate +0-30 "$NOMBRE" -pointsize 24 -annotate +0+30 "Sección $SECCION - Desafío Insignia 2" "$TRABAJO/foto-${P}.png"
+    -annotate +0-40 "$NOMBRE" -pointsize 26 -annotate +0+10 "Código $CODIGO" -pointsize 22 -annotate +0+55 "Sección $SECCION - Desafío Insignia 2" "$TRABAJO/foto-${P}.png"
 else
   python3 -m pip install --user -q pillow
-  python3 - "$TRABAJO/foto-${P}.png" "$NOMBRE" <<'PY'
+  python3 - "$TRABAJO/foto-${P}.png" "$MARCA" <<'PY'
 import sys
 from PIL import Image, ImageDraw
 img = Image.new("RGB", (640, 400), (26, 115, 232)); ImageDraw.Draw(img).text((40, 190), sys.argv[2], fill="white"); img.save(sys.argv[1])

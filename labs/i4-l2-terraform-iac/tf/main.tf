@@ -71,5 +71,5 @@ resource "google_compute_instance" "vm" {
 resource "google_storage_bucket_object" "evidencia" {
   name    = "evidencia-${var.prefijo}.txt"
   bucket  = google_storage_bucket.datos.name
-  content = "Alumno: ${var.nombre}\nCurso: Servicios Cloud - Sección ${var.seccion}\nVM: ${google_compute_instance.vm.name}\nEtapa: ${var.etapa}\n"
+  content = "Alumno: ${var.nombre}\nCódigo: ${var.codigo}\nCurso: Servicios Cloud - Sección ${var.seccion}\nVM: ${google_compute_instance.vm.name}\nEtapa: ${var.etapa}\n"
 }

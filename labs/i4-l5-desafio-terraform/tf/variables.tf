@@ -9,6 +9,7 @@ variable "zona" {
 }
 variable "prefijo" { type = string }
 variable "nombre" { type = string }
+variable "codigo" { type = string }
 variable "seccion" { type = string }
 variable "etapa" {
   description = "1 = importar VMs + bucket; 3 = cambiar tipo y agregar 3ra VM; 4 = quitar 3ra VM, VPC y firewall"

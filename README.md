@@ -14,7 +14,7 @@ Laboratorios del **Google Cloud Engineering Certificate** replicados en un proye
 
 | Integrante | Carpeta | Prefijo de recursos |
 |---|---|---|
-| Thiago Paolo Icochea Rodriguez | [alumnos/thiago-icochea](alumnos/thiago-icochea) | `ticochea` |
+| Thiago Paolo Icochea Rodriguez (U22330428) | [alumnos/thiago-icochea](alumnos/thiago-icochea) | `ticochea` |
 | Carlos Enrique Giussepe Gonzales Aguilar | [alumnos/carlos-gonzales](alumnos/carlos-gonzales) | `cgonzales` |
 | Eddyson Cesar Huamani Pereira | [alumnos/eddyson-huamani](alumnos/eddyson-huamani) | `ehuamani` |
 | Emmanuel Misael Torres Centeno | [alumnos/emmanuel-torres](alumnos/emmanuel-torres) | `etorres` |

@@ -26,7 +26,7 @@ resource "google_storage_bucket_object" "index" {
     <!doctype html><html lang="es"><head><meta charset="utf-8"><title>Módulo Terraform - ${var.nombre}</title></head>
     <body style="font-family:Arial;background:#f3e8fd;padding:40px">
     <h1 style="color:#7627bb">Sitio creado con un módulo propio de Terraform</h1>
-    <p><b>Alumno:</b> ${var.nombre}<br><b>Curso:</b> Servicios Cloud - Sección ${var.seccion}<br>
+    <p><b>Alumno:</b> ${var.nombre}<br><b>Código:</b> ${var.codigo}<br><b>Curso:</b> Servicios Cloud - Sección ${var.seccion}<br>
     <b>Módulo:</b> ./modules/sitio_web · Insignia 4 Lab 3</p></body></html>
   HTML
 }

@@ -13,10 +13,10 @@ existe gcloud compute instances describe "$JUMP" --zone "$ZONA" || \
     --image-family debian-12 --image-project debian-cloud --boot-disk-size 10GB --labels "$ETIQUETAS"
 
 paso "Tarea 2) Plantilla de instancias con NGINX personalizado"
-startup_nginx "DESAFÍO · Insignia Implement Load Balancing on Compute Engine" \
+startup_python "DESAFÍO · Insignia Implement Load Balancing on Compute Engine" \
   "Backend del MIG autoescalable ${MIG} (mín ${MIN}, máx ${MAX}) detrás del balanceador HTTP ${P}-desafio-lb" > "$TRABAJO/web.sh"
 existe gcloud compute instance-templates describe "$PLANT" || \
-  cmd gcloud compute instance-templates create "$PLANT" --network default --tags "$TAG" \
+  cmd gcloud compute instance-templates create "$PLANT" --network default --no-address --tags "$TAG" \
     --machine-type e2-micro --image-family debian-12 --image-project debian-cloud \
     --boot-disk-size 10GB --labels "$ETIQUETAS" --metadata-from-file startup-script="$TRABAJO/web.sh"
 
