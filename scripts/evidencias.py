@@ -48,6 +48,31 @@ def ahora():
     return datetime.datetime.now(zoneinfo.ZoneInfo("America/Lima")).strftime("%Y-%m-%d %H:%M")
 
 
+SENSIBLE = ("thicorodrig", "@hotmail", "@gmail", "gmail.com", "hotmail.com", "eduko500", "ceggax96")
+
+
+def _difuminar(img, caja, radio=9):
+    from PIL import ImageFilter
+    x0, y0, x1, y1 = [int(v) for v in caja]
+    x0, y0 = max(0, x0), max(0, y0)
+    x1, y1 = min(img.width, x1), min(img.height, y1)
+    if x1 > x0 and y1 > y0:
+        img.paste(img.crop((x0, y0, x1, y1)).filter(ImageFilter.GaussianBlur(radio)), (x0, y0))
+
+
+def privacidad(img):
+    """Difumina el avatar (ícono con la inicial) de la cuenta en la barra superior."""
+    w, h = img.size
+    # 1) Avatar: círculo morado en la barra superior
+    px = img.load()
+    pts = [(x, y) for y in range(0, min(60, h)) for x in range(w)
+           if px[x, y][0] > 120 and px[x, y][1] < 90 and px[x, y][2] > 140]
+    if len(pts) > 80:
+        xs, ys = [p[0] for p in pts], [p[1] for p in pts]
+        _difuminar(img, (min(xs) - 8, min(ys) - 8, max(xs) + 8, max(ys) + 8), 12)
+    return img
+
+
 def hora_de(archivo):
     """Hora exacta en que se tomó la captura (fecha de modificación del archivo original)."""
     t = datetime.datetime.fromtimestamp(os.path.getmtime(archivo), zoneinfo.ZoneInfo("America/Lima"))
@@ -58,10 +83,7 @@ def marcar(img, a, lab, pie, hora=None):
     """Agrega una franja superior con el pie de foto y una inferior con los datos del alumno y la hora."""
     img = img.convert("RGB")
     w, h = img.size
-    # Oculta el avatar de la cuenta (esquina superior derecha de la consola / Cloud Shell)
-    from PIL import ImageFilter
-    caja = (w - 72, 0, w, 50)
-    img.paste(img.crop(caja).filter(ImageFilter.GaussianBlur(10)), caja[:2])
+    img = privacidad(img)
     alto_sup, alto_inf = 46, 66
     lienzo = Image.new("RGB", (w, h + alto_sup + alto_inf), "white")
     lienzo.paste(img, (0, alto_sup))
