@@ -93,8 +93,9 @@ paso "7) CANARY: 1 réplica 2.0.0-canary recibe ~25 % del tráfico del mismo Ser
 despliegue web-canary canary 2.0.0-canary web-canary 1 | kubectl apply -f -
 kubectl rollout status deployment/web-canary --timeout=120s
 kubectl get pods -L track,version
-echo "Distribución de 20 peticiones:"
-for i in $(seq 1 20); do version; done | sort | uniq -c
+echo "Esperando 30 s a que el pod canary entre al balanceador…"; sleep 30
+echo "Distribución de 40 peticiones:"
+for i in $(seq 1 40); do version; done | sort | uniq -c
 kubectl delete deployment web-canary
 
 paso "8) BLUE-GREEN: Service 'web-bg' apunta a blue (v1) y luego se cambia a green (v2)"
