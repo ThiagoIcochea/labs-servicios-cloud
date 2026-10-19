@@ -1,4 +1,4 @@
-01-cloudshell-vms-manuales.png|Tarea 0: VMs ticochea-tf-instance-1 y 2 creadas a mano con gcloud (fuera de Terraform)|19/10/2026 07:03:48|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792411428437-138.jpg
+01-cloudshell-vms-manuales.png|Tarea 0: punto de partida del desafío, VMs ticochea-tf-instance-1 y 2 existentes antes de importarlas a Terraform|19/10/2026 07:03:48|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792411428437-138.jpg
 02-cloudshell-importar.png|Tareas 1-3: plan con 2 VMs a importar y el bucket del backend; importación en curso|19/10/2026 07:03:48|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792411428439-139.jpg
 03-cloudshell-backend.png|Apply: 2 importadas, 1 creada; outputs del alumno y migración al backend gcs|19/10/2026 07:04:47|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792411488003-141.jpg
 04-cloudshell-e2-small.png|Tarea 5: e2-micro → e2-small y nueva ticochea-tf-instance-3|19/10/2026 07:05:47|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792411547446-142.jpg
