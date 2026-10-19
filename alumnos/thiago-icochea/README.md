@@ -20,7 +20,7 @@
 |---|---|---|---|
 | `i1-l1` | [Insignia 1 · Lab 1 — Creando una máquina virtual](../../labs/i1-l1-vm-nginx/README.md) | ✅ Completado (12 capturas, 2 videos) | [evidencias](evidencias/i1-l1-vm-nginx/) |
 | `i1-l2` | [Insignia 1 · Lab 2 — Cloud Shell y gcloud](../../labs/i1-l2-cloudshell-gcloud/README.md) | ✅ Completado (10 capturas, 2 videos) | [evidencias](evidencias/i1-l2-cloudshell-gcloud/) |
-| `i1-l3` | [Insignia 1 · Lab 3 — Balanceadores de carga de red y HTTP](../../labs/i1-l3-balanceadores/README.md) | ⬜ Pendiente | [evidencias](evidencias/i1-l3-balanceadores/) |
+| `i1-l3` | [Insignia 1 · Lab 3 — Balanceadores de carga de red y HTTP](../../labs/i1-l3-balanceadores/README.md) | ✅ Completado (13 capturas, 2 videos) | [evidencias](evidencias/i1-l3-balanceadores/) |
 | `i1-l4` | [Insignia 1 · Desafío — Implement Load Balancing on Compute Engine](../../labs/i1-l4-desafio-load-balancing/README.md) | ⬜ Pendiente | [evidencias](evidencias/i1-l4-desafio-load-balancing/) |
 | `i2-l1` | [Insignia 2 · Lab 1 — Cloud Storage (CLI/SDK)](../../labs/i2-l1-cloud-storage/README.md) | ⬜ Pendiente | [evidencias](evidencias/i2-l1-cloud-storage/) |
 | `i2-l2` | [Insignia 2 · Lab 2 — Cloud IAM: conceder y revocar permisos](../../labs/i2-l2-cloud-iam/README.md) | ⬜ Pendiente | [evidencias](evidencias/i2-l2-cloud-iam/) |

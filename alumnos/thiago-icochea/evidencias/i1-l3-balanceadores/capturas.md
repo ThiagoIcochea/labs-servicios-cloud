@@ -9,3 +9,5 @@
 09-navegador-red-www2.png|Navegador · balanceador de red responde desde ticochea-www2|18/10/2026 23:17:26
 10-navegador-red-www3.png|Navegador · nueva petición al balanceador de red responde desde ticochea-www3|18/10/2026 23:17:26
 11-navegador-http-mig.png|Navegador · balanceador HTTP (136.82.37.235) responde desde una VM del MIG|18/10/2026 23:20:15
+12-cloudshell-limpieza.png|Cloud Shell · ./lab down elimina balanceadores, MIG, plantilla, VMs, IPs y firewall; verificación vacía|18/10/2026 23:27:32
+13-consola-sin-balanceadores.png|Consola · Balanceo de cargas sin recursos después de la limpieza|18/10/2026 23:27:32

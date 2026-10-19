@@ -84,7 +84,7 @@ existe() { "$@" >/dev/null 2>&1; }
 
 borrar() { # ejecuta un borrado sin fallar si el recurso no existe
   echo -e "${C_AZ}\$ $*${C_NO}"
-  "$@" --quiet 2>&1 | grep -v -E 'was not found|not found|NOT_FOUND' || true
+  "$@" --quiet 2>&1 | grep -v -E 'was not found|not found|NOT_FOUND|Could not fetch resource|^ - |^$' || true
 }
 
 ip_externa_vm() { # $1 = nombre, $2 = zona (opcional)
