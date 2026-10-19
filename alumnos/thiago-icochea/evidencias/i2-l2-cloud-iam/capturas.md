@@ -1,0 +1,6 @@
+01-cloudshell-inicio.png|Cloud Shell · datos del alumno, creación del Usuario 2 (cuenta de servicio) y del bucket|19/10/2026 04:34:48|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792402488739-5.jpg
+02-cloudshell-conceder-quitar.png|Cloud Shell · Usuario 2 con roles/viewer puede listar; al quitar el rol recibe acceso denegado|19/10/2026 04:32:58|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792402378026-1.jpg
+03-cloudshell-minimo-privilegio.png|Cloud Shell · Usuario 2 con roles/storage.objectViewer vuelve a leer el archivo del alumno|19/10/2026 04:32:58|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792402378027-2.jpg
+04-cloudshell-politica-final.png|Cloud Shell · política IAM final del Usuario 2 y fin del lab|19/10/2026 04:32:58|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792402378024-0.jpg
+05-consola-cuentas-servicio.png|Consola · cuenta de servicio ticochea-usuario2 (Usuario 2 de Thiago Paolo Icochea Rodriguez)|19/10/2026 04:33:41|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792402421392-4.jpg
+06-consola-bucket.png|Consola · bucket sc-45104-labs-ticochea-i2l2 con sample.txt (datos del alumno)|19/10/2026 04:34:48|/tmp/claude-chrome-screenshots-pC1MMH/screenshot-1792402488739-6.jpg
