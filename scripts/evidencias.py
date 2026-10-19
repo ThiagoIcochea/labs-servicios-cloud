@@ -62,24 +62,21 @@ def marcar(img, a, lab, pie, hora=None):
     from PIL import ImageFilter
     caja = (w - 72, 0, w, 50)
     img.paste(img.crop(caja).filter(ImageFilter.GaussianBlur(10)), caja[:2])
-    alto_sup, alto_inf = 46, 40
+    alto_sup, alto_inf = 46, 66
     lienzo = Image.new("RGB", (w, h + alto_sup + alto_inf), "white")
     lienzo.paste(img, (0, alto_sup))
     d = ImageDraw.Draw(lienzo)
     d.rectangle([0, 0, w, alto_sup], fill=(32, 33, 36))
     d.text((16, 11), pie, font=fuente(20, True), fill="white")
-    d.rectangle([0, h + alto_sup, w, h + alto_sup + alto_inf], fill=AZUL)
-    marca = f"{a['nombre']}  ·  {a['codigo']}  ·  Servicios Cloud - Sección 45104  ·  {lab}"
-    d.text((16, h + alto_sup + 9), marca, font=fuente(18), fill="white")
-    reloj = f"{hora or ahora()}  (hora de Lima)"
-    rw = d.textlength(reloj, font=fuente(18, True))
-    d.rectangle([w - rw - 30, h + alto_sup, w, h + alto_sup + alto_inf], fill=(13, 71, 161))
-    d.text((w - rw - 15, h + alto_sup + 9), reloj, font=fuente(18, True), fill="white")
-    # sello en la esquina superior derecha
-    sello = f"{a['codigo']}"
-    tw = d.textlength(sello, font=fuente(18, True))
-    d.rounded_rectangle([w - tw - 34, 8, w - 12, alto_sup - 8], radius=8, fill=AZUL)
-    d.text((w - tw - 23, 12), sello, font=fuente(18, True), fill="white")
+    y0 = h + alto_sup
+    d.rectangle([0, y0, w, y0 + alto_inf], fill=AZUL)
+    # Fila 1: datos del alumno · Fila 2: lab y fecha/hora exacta de la captura
+    d.text((16, y0 + 8), f"{a['nombre']}  ·  Código {a['codigo']}  ·  Servicios Cloud - Sección 45104",
+           font=fuente(18, True), fill="white")
+    d.text((16, y0 + 37), f"Lab: {lab}", font=fuente(16), fill=(220, 230, 255))
+    reloj = f"Fecha y hora: {hora or ahora()} (Lima)"
+    rw = d.textlength(reloj, font=fuente(16, True))
+    d.text((w - rw - 16, y0 + 37), reloj, font=fuente(16, True), fill="white")
     return lienzo
 
 
@@ -92,7 +89,7 @@ def captura(slug, lab, origen, nombre, pie):
     idx = os.path.join(d, "capturas.md")
     previas = [l for l in open(idx, encoding="utf-8")] if os.path.exists(idx) else []
     previas = [l for l in previas if not l.startswith(f"{nombre}.png|")]
-    previas.append(f"{nombre}.png|{pie}|{hora}\n")
+    previas.append(f"{nombre}.png|{pie}|{hora}|{os.path.abspath(origen)}\n")
     open(idx, "w", encoding="utf-8").writelines(sorted(previas))
     print(destino)
 
@@ -130,8 +127,6 @@ def video(slug, lab):
             fondo.paste(im, ((W - im.width) // 2, (H - im.height) // 2))
             fondo.save(f"{tmp}/{n:03d}.png")
             n += 1
-        cierre = portada(a, lab, "Recursos eliminados al terminar", W, H)
-        cierre.save(f"{tmp}/{n:03d}.png")
         salida = os.path.join(d, "video-resumen.mp4")
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", "1/4", "-i", f"{tmp}/%03d.png",
                         "-vf", "fps=25,format=yuv420p", "-c:v", "libx264", "-crf", "28", salida], check=True)
