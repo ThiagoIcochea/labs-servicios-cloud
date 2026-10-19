@@ -28,8 +28,8 @@ paso "2) GROUP BY + COUNT + ORDER BY: estaciones de inicio más usadas"
 cmd bq query --use_legacy_sql=false --max_rows=10 \
   "SELECT start_station_name, COUNT(*) AS num_viajes, '$P' AS alumno FROM \`bigquery-public-data.london_bicycles.cycle_hire\` GROUP BY start_station_name ORDER BY num_viajes DESC LIMIT 10"
 
-paso "3) Dataset propio $DS y tablas de resultados"
-existe bq show "$PROJECT_ID:$DS" || cmd bq --location US mk -d --label "alumno:$P" --label "seccion:$SECCION" \
+paso "3) Dataset propio $DS en la UE (misma ubicación que el dataset público london_bicycles)"
+existe bq show "$PROJECT_ID:$DS" || cmd bq --location EU mk -d --label "alumno:$P" --label "seccion:$SECCION" \
   --description "Dataset del lab i3-l2 de $MARCA - $CURSO sección $SECCION" "$PROJECT_ID:$DS"
 cmd bq query --use_legacy_sql=false --replace --destination_table "$PROJECT_ID:$DS.inicio_estaciones" \
   "SELECT start_station_name, COUNT(*) AS num FROM \`bigquery-public-data.london_bicycles.cycle_hire\` GROUP BY start_station_name ORDER BY num DESC"
@@ -38,7 +38,7 @@ cmd bq query --use_legacy_sql=false --replace --destination_table "$PROJECT_ID:$
 cmd bq ls "$PROJECT_ID:$DS"
 
 paso "4) Exportando las tablas a CSV en $BUCKET"
-existe gcloud storage buckets describe "$BUCKET" || cmd gcloud storage buckets create "$BUCKET" --location "$REGION"
+existe gcloud storage buckets describe "$BUCKET" || cmd gcloud storage buckets create "$BUCKET" --location EU
 cmd bq extract --print_header=false "$PROJECT_ID:$DS.inicio_estaciones" "$BUCKET/inicio_estaciones.csv"
 cmd bq extract --print_header=false "$PROJECT_ID:$DS.fin_estaciones" "$BUCKET/fin_estaciones.csv"
 cmd gcloud storage ls -l "$BUCKET"
