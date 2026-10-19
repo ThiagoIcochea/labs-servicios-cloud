@@ -21,7 +21,7 @@ existe gcloud pubsub topics describe "$TOPICO" || cmd gcloud pubsub topics creat
 existe gcloud pubsub subscriptions describe "$SUB" || cmd gcloud pubsub subscriptions create "$SUB" --topic "$TOPICO"
 
 paso "Permisos que necesitan los disparadores de eventos de Cloud Storage"
-SA_GCS="$(gcloud storage service-agent --project "$PROJECT_ID")"
+SA_GCS="service-${NUM_PROY}@gs-project-accounts.iam.gserviceaccount.com"   # agente de servicio de Cloud Storage
 # En un proyecto nuevo la cuenta de servicio de Cloud Storage puede no existir todavía: se crea aquí
 gcloud beta services identity create --service=storage.googleapis.com --project "$PROJECT_ID" >/dev/null 2>&1 || true
 for intento in $(seq 1 12); do
