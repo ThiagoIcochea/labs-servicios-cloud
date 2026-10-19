@@ -22,7 +22,8 @@ existe gcloud pubsub subscriptions describe "$SUB" || cmd gcloud pubsub subscrip
 
 paso "Permisos que necesitan los disparadores de eventos de Cloud Storage"
 SA_GCS="$(gcloud storage service-agent --project "$PROJECT_ID")"
-# La cuenta de servicio de Cloud Storage puede tardar unos minutos en existir en un proyecto nuevo
+# En un proyecto nuevo la cuenta de servicio de Cloud Storage puede no existir todavía: se crea aquí
+gcloud beta services identity create --service=storage.googleapis.com --project "$PROJECT_ID" >/dev/null 2>&1 || true
 for intento in $(seq 1 12); do
   if gcloud projects add-iam-policy-binding "$PROJECT_ID" --member "serviceAccount:$SA_GCS" \
       --role roles/pubsub.publisher --condition=None --format=none 2>/dev/null; then
