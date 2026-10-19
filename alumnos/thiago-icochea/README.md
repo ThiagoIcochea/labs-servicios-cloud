@@ -38,6 +38,6 @@
 | `i4-l2` | [Insignia 4 · Lab 2 — Infraestructura como código con Terraform](../../labs/i4-l2-terraform-iac/README.md) | ✅ Completado (6 capturas, 2 videos) | [evidencias](evidencias/i4-l2-terraform-iac/) |
 | `i4-l3` | [Insignia 4 · Lab 3 — Módulos de Terraform](../../labs/i4-l3-terraform-modulos/README.md) | ✅ Completado (7 capturas, 2 videos) | [evidencias](evidencias/i4-l3-terraform-modulos/) |
 | `i4-l4` | [Insignia 4 · Lab 4 — Administración del estado de Terraform](../../labs/i4-l4-terraform-estado/README.md) | ✅ Completado (6 capturas, 2 videos) | [evidencias](evidencias/i4-l4-terraform-estado/) |
-| `i4-l5` | [Insignia 4 · Desafío — Build Infrastructure with Terraform](../../labs/i4-l5-desafio-terraform/README.md) | ⬜ Pendiente | [evidencias](evidencias/i4-l5-desafio-terraform/) |
+| `i4-l5` | [Insignia 4 · Desafío — Build Infrastructure with Terraform](../../labs/i4-l5-desafio-terraform/README.md) | ✅ Completado (10 capturas, 2 videos) | [evidencias](evidencias/i4-l5-desafio-terraform/) |
 
 Cada carpeta de `evidencias/` guarda las capturas (`.png`), el video (`.gif` / `.mp4`) y el registro de la terminal (`salida-*.log`).
