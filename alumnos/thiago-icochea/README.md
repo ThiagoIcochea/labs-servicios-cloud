@@ -34,7 +34,7 @@
 | `i3-l4` | [Insignia 3 · Lab 4 — Monitoreo: Ops Agent, logs y métricas](../../labs/i3-l4-monitoreo-logs/README.md) | ✅ Completado (8 capturas, 2 videos) | [evidencias](evidencias/i3-l4-monitoreo-logs/) |
 | `i3-l5` | [Insignia 3 · Lab 5 — Gestión de despliegues en Kubernetes Engine](../../labs/i3-l5-gke-deployments/README.md) | ✅ Completado (9 capturas, 2 videos) | [evidencias](evidencias/i3-l5-gke-deployments/) |
 | `i3-l6` | [Insignia 3 · Desafío — Develop your Google Cloud Network](../../labs/i3-l6-desafio-network/README.md) | ✅ Completado (8 capturas, 2 videos) | [evidencias](evidencias/i3-l6-desafio-network/) |
-| `i4-l1` | [Insignia 4 · Lab 1 — Fundamentos de Terraform](../../labs/i4-l1-terraform-fundamentos/README.md) | ⬜ Pendiente | [evidencias](evidencias/i4-l1-terraform-fundamentos/) |
+| `i4-l1` | [Insignia 4 · Lab 1 — Fundamentos de Terraform](../../labs/i4-l1-terraform-fundamentos/README.md) | ✅ Completado (5 capturas, 2 videos) | [evidencias](evidencias/i4-l1-terraform-fundamentos/) |
 | `i4-l2` | [Insignia 4 · Lab 2 — Infraestructura como código con Terraform](../../labs/i4-l2-terraform-iac/README.md) | ⬜ Pendiente | [evidencias](evidencias/i4-l2-terraform-iac/) |
 | `i4-l3` | [Insignia 4 · Lab 3 — Módulos de Terraform](../../labs/i4-l3-terraform-modulos/README.md) | ⬜ Pendiente | [evidencias](evidencias/i4-l3-terraform-modulos/) |
 | `i4-l4` | [Insignia 4 · Lab 4 — Administración del estado de Terraform](../../labs/i4-l4-terraform-estado/README.md) | ⬜ Pendiente | [evidencias](evidencias/i4-l4-terraform-estado/) |
