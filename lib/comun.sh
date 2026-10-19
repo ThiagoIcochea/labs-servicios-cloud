@@ -196,6 +196,11 @@ fin_lab() {
 }
 
 fin_limpieza() {
+  paso "Verificación: recursos que aún tienen el prefijo ${P} y el lab ${LAB_CORTO}"
+  echo "VMs:";          gcloud compute instances list --filter="labels.alumno=${P} AND labels.lab=${LAB_CORTO}" --format='value(name)' 2>/dev/null | sed 's/^/  - /' || true
+  echo "Firewall:";     gcloud compute firewall-rules list --filter="name~^${P}-${LAB_CORTO}" --format='value(name)' 2>/dev/null | sed 's/^/  - /' || true
+  echo "Buckets:";      gcloud storage buckets list --format='value(name)' 2>/dev/null | grep -E -- "-${P}-${LAB_CORTO}" | sed 's/^/  - /' || true
+  echo "(si las listas están vacías, no queda nada del lab)"
   echo
   ok "Limpieza de ${LAB_ID} completada para ${NOMBRE} - $(ahora). No quedan recursos de este lab cobrando."
 }

@@ -1,0 +1,17 @@
+[1;36m╔════════════════════════════════════════════════════════════════════════
+║  Limpieza · Insignia 1 · Lab 1
+╠════════════════════════════════════════════════════════════════════════
+║  Alumno   : Thiago Paolo Icochea Rodriguez
+║  Código   : U22330428
+║  Curso    : Servicios Cloud - Sección 45104 (Universidad Tecnológica del Perú (UTP))
+║  Docente  : Eleodoro Orbegoso Carrera
+║  Proyecto : sc-45104-labs    Lab: i1-l1-vm-nginx
+║  Fecha    : 2026-10-18 22:54:59 (hora de Lima)
+╚════════════════════════════════════════════════════════════════════════[0m
+[1;36m$ gcloud compute instances delete ticochea-i1l1-web ticochea-i1l1-gcelab2 --zone us-central1-a[0m
+Deleted [https://www.googleapis.com/compute/v1/projects/sc-45104-labs/zones/us-central1-a/instances/ticochea-i1l1-web].
+Deleted [https://www.googleapis.com/compute/v1/projects/sc-45104-labs/zones/us-central1-a/instances/ticochea-i1l1-gcelab2].
+[1;36m$ gcloud compute firewall-rules delete ticochea-i1l1-http[0m
+Deleted [https://www.googleapis.com/compute/v1/projects/sc-45104-labs/global/firewalls/ticochea-i1l1-http].
+
+[1;32m✔ Limpieza de i1-l1-vm-nginx completada para Thiago Paolo Icochea Rodriguez - 2026-10-18 22:55:54 (hora de Lima). No quedan recursos de este lab cobrando.[0m
