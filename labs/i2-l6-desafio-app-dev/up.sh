@@ -22,7 +22,16 @@ existe gcloud pubsub subscriptions describe "$SUB" || cmd gcloud pubsub subscrip
 
 paso "Permisos que necesitan los disparadores de eventos de Cloud Storage"
 SA_GCS="$(gcloud storage service-agent --project "$PROJECT_ID")"
-cmd gcloud projects add-iam-policy-binding "$PROJECT_ID" --member "serviceAccount:$SA_GCS" --role roles/pubsub.publisher --condition=None --format=none
+# La cuenta de servicio de Cloud Storage puede tardar unos minutos en existir en un proyecto nuevo
+for intento in $(seq 1 12); do
+  if gcloud projects add-iam-policy-binding "$PROJECT_ID" --member "serviceAccount:$SA_GCS" \
+      --role roles/pubsub.publisher --condition=None --format=none 2>/dev/null; then
+    ok "roles/pubsub.publisher otorgado a $SA_GCS"; break
+  fi
+  aviso "La cuenta de servicio de Cloud Storage aún se está creando (intento $intento/12). Reintento en 15 s…"
+  gcloud storage ls "gs://$BUCKET" >/dev/null 2>&1 || true
+  sleep 15
+done
 for R in roles/eventarc.eventReceiver roles/run.invoker roles/artifactregistry.reader; do
   gcloud projects add-iam-policy-binding "$PROJECT_ID" --member "serviceAccount:$SA_COMPUTE" --role "$R" --condition=None --format=none
 done
