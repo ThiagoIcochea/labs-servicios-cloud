@@ -32,7 +32,7 @@ existe gcloud compute instances describe "$VM" --zone "$ZONA" || \
 paso "6) Listando y filtrando instancias"
 cmd gcloud compute instances list --filter="name=('$VM')"
 cmd gcloud compute instances list --filter="labels.alumno=$P" --format='table(name,zone.basename(),status,labels.lab)'
-cmd gcloud compute firewall-rules list --filter="network='default' AND ALLOW:'icmp'" --format='table(name,network,sourceRanges.list())'
+cmd gcloud compute firewall-rules list --filter="network~default" --format='table(name,network.basename(),direction,sourceRanges.list(),allowed[].map().firewall_rule().list())'
 
 paso "7) Conectándose por SSH a la VM y ejecutando comandos dentro de ella"
 sleep 20
