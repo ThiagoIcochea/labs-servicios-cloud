@@ -12,7 +12,9 @@ CLAVE="$(cat "$CLAVE_FILE")"
 
 paso "0) Creando la instancia de Cloud SQL $INST en segundo plano (tarda ~8 min)"
 if ! existe gcloud sql instances describe "$INST"; then
-  cmd gcloud sql instances create "$INST" --database-version MYSQL_8_0 --edition enterprise \
+  # La contraseña de root se genera al azar y NO se muestra en pantalla (queda en $CLAVE_FILE)
+  echo -e "${C_AZ}\$ gcloud beta sql instances create $INST --database-version MYSQL_8_0 --edition enterprise --tier db-f1-micro --region $REGION --storage-size 10 --storage-type HDD --root-password ******** --labels $ETIQUETAS --no-backup --async${C_NO}"
+  gcloud beta sql instances create "$INST" --database-version MYSQL_8_0 --edition enterprise \
     --tier db-f1-micro --region "$REGION" --storage-size 10 --storage-type HDD \
     --root-password "$CLAVE" --labels "$ETIQUETAS" --no-backup --async
 fi
