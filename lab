@@ -52,5 +52,11 @@ DIR_EVID="$RAIZ/alumnos/$ALUMNO/evidencias/$LAB_ID"
 mkdir -p "$DIR_EVID"
 LOG="$DIR_EVID/salida-$ACCION-$(TZ=America/Lima date +%Y%m%d-%H%M%S).log"
 echo "Registro de esta ejecución: ${LOG#"$RAIZ"/}"
-bash "$DIR_LAB/$ACCION.sh" 2>&1 | tee "$LOG"
+# Si el alumno no registró correo propio (cuenta del equipo), la cuenta no se muestra en pantalla ni en el registro
+CUENTA="$(gcloud config get-value account 2>/dev/null || true)"
+if [[ -z "$(grep -E "^${ALUMNO};" "$RAIZ/config/alumnos.csv" | cut -d';' -f5)" && -n "$CUENTA" ]]; then
+  bash "$DIR_LAB/$ACCION.sh" 2>&1 | sed -u "s/${CUENTA//./\\.}/cuenta-del-equipo/g" | tee "$LOG"
+else
+  bash "$DIR_LAB/$ACCION.sh" 2>&1 | tee "$LOG"
+fi
 exit "${PIPESTATUS[0]}"
