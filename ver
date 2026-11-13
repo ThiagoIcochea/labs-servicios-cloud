@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Muestra por partes la salida registrada de un lab (para tomar capturas sin desplazarse en la terminal).
+#   ./ver <alumno> <lab> <paso_desde> [paso_hasta] [--sin-banner]
+# Ejemplo: ./ver karen-quispe i1-l2 1 3   -> banner del alumno + pasos 1 a 3 del último "up"
+RAIZ="$(cd "$(dirname "$0")" && pwd)"
+A="$1"; L="$2"; D="${3:-1}"; H="${4:-$D}"; SB="${5:-}"
+dir=( "$RAIZ"/alumnos/"$A"/evidencias/"$L"* ); dir="${dir[0]}"
+log="$(ls -t "$dir"/salida-up-*.log 2>/dev/null | head -1)"
+[[ -f "$log" ]] || { echo "No hay registro de $A $L"; exit 1; }
+clear
+[[ "$SB" == "--sin-banner" ]] || awk '/╚|^╚/{print; exit} {print}' "$log"
+awk -v d="$D" -v h="$H" '
+  /▶ [0-9]+\)/ { match($0, /▶ [0-9]+\)/); n = substr($0, RSTART+4, RLENGTH-5) + 0; on = (n >= d && n <= h) }
+  /✔ Lab .* terminado/ { on = (h >= 99) }
+  on { print }' "$log"
