@@ -1,0 +1,1 @@
+01-cloudshell-inicio.png|Cloud Shell · inicio del lab: datos de la alumna y regla de firewall kquispe-i1l1-http|12/11/2026 21:17:11|/tmp/claude-chrome-screenshots-P96UUN/screenshot-1794536231260-0.jpg

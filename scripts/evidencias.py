@@ -70,7 +70,29 @@ def privacidad(img):
     if len(pts) > 80:
         xs, ys = [p[0] for p in pts], [p[1] for p in pts]
         _difuminar(img, (min(xs) - 8, min(ys) - 8, max(xs) + 8, max(ys) + 8), 12)
+    # 2) Texto con la cuenta (correo, usuario o /home/<usuario>) en cualquier parte de la captura
+    for caja in _cajas_sensibles(img):
+        _difuminar(img, caja, 10)
     return img
+
+
+CLAVES = ("thicor", "/thic", "home/thi", "orodrig", "hotmail", "@gmail", "gmail.com", "eduko500", "ceggax96")
+
+
+def _cajas_sensibles(img):
+    """Ubica con OCR (tesseract) las palabras que contienen la cuenta y devuelve sus cajas."""
+    import csv, io
+    with tempfile.TemporaryDirectory() as tmp:
+        f = os.path.join(tmp, "o.png")
+        img.convert("L").resize((img.width * 2, img.height * 2)).save(f)
+        r = subprocess.run(["tesseract", f, "-", "--psm", "11", "tsv"], capture_output=True, text=True)
+    cajas = []
+    for row in csv.DictReader(io.StringIO(r.stdout), delimiter="\t", quoting=csv.QUOTE_NONE):
+        t = (row.get("text") or "").lower()
+        if t and any(k in t for k in CLAVES):
+            x, y, w, h = (int(row[k]) / 2 for k in ("left", "top", "width", "height"))
+            cajas.append((x - 4, y - 3, x + w + 4, y + h + 3))
+    return cajas
 
 
 def hora_de(archivo):

@@ -55,7 +55,7 @@ echo "Registro de esta ejecución: ${LOG#"$RAIZ"/}"
 # Si el alumno no registró correo propio (cuenta del equipo), la cuenta no se muestra en pantalla ni en el registro
 CUENTA="$(gcloud config get-value account 2>/dev/null || true)"
 if [[ -z "$(grep -E "^${ALUMNO};" "$RAIZ/config/alumnos.csv" | cut -d';' -f5)" && -n "$CUENTA" ]]; then
-  bash "$DIR_LAB/$ACCION.sh" 2>&1 | sed -u "s/${CUENTA//./\\.}/cuenta-del-equipo/g" | tee "$LOG"
+  bash "$DIR_LAB/$ACCION.sh" 2>&1 | sed -u -e "s/${CUENTA//./\\.}/cuenta-del-equipo/g" -e "s#${HOME}#~#g" | tee "$LOG"
 else
   bash "$DIR_LAB/$ACCION.sh" 2>&1 | tee "$LOG"
 fi
