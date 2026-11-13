@@ -9,7 +9,8 @@ log="$(ls -t "$dir"/salida-up-*.log 2>/dev/null | head -1)"
 [[ -f "$log" ]] || { echo "No hay registro de $A $L"; exit 1; }
 clear
 [[ "$SB" == "--sin-banner" ]] || awk '/╚|^╚/{print; exit} {print}' "$log"
+# Las secciones se numeran por orden de aparición de las líneas "▶" (0 = primera). 99 = hasta el final.
 awk -v d="$D" -v h="$H" '
-  /▶ [0-9]+\)/ { match($0, /▶ [0-9]+\)/); n = substr($0, RSTART+4, RLENGTH-5) + 0; on = (n >= d && n <= h) }
+  /▶/ { n++; on = (n-1 >= d && n-1 <= h) }
   /✔ Lab .* terminado/ { on = (h >= 99) }
   on { print }' "$log"
