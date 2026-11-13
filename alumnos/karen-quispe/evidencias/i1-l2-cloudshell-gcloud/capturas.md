@@ -1,0 +1,9 @@
+01-cloudshell-auth-config.png|Cloud Shell · datos de la alumna, gcloud auth list y gcloud config list|12/11/2026 21:43:51|/tmp/claude-chrome-screenshots-ZRcXmU/screenshot-1794537831996-17.jpg
+02-cloudshell-region-zona.png|Cloud Shell · región us-central1 y zona us-central1-a por defecto|12/11/2026 21:44:25|/tmp/claude-chrome-screenshots-ZRcXmU/screenshot-1794537865286-18.jpg
+03-cloudshell-proyecto-vm.png|Cloud Shell · metadatos del proyecto, variables de entorno y creación de la VM kquispe-i1l2-gcelab2|12/11/2026 21:44:50|/tmp/claude-chrome-screenshots-ZRcXmU/screenshot-1794537890099-21.jpg
+04-cloudshell-filtros.png|Cloud Shell · instancias filtradas por nombre y por la etiqueta alumno=kquispe; reglas de firewall de la red default|12/11/2026 21:44:25|/tmp/claude-chrome-screenshots-ZRcXmU/screenshot-1794537865286-19.jpg
+05-cloudshell-ssh-metadatos.png|Cloud Shell · SSH a la VM: nombre y sección leídos desde el servidor de metadatos|12/11/2026 21:44:25|/tmp/claude-chrome-screenshots-ZRcXmU/screenshot-1794537865286-20.jpg
+06-cloudshell-evidencia-logs.png|Cloud Shell · archivo de evidencia en el home y logs de auditoría con gcloud logging|12/11/2026 21:44:50|/tmp/claude-chrome-screenshots-ZRcXmU/screenshot-1794537890099-22.jpg
+07-consola-instancia.png|Consola · VM kquispe-i1l2-gcelab2 en ejecución: información básica|13/11/2026 02:49:41|/tmp/claude-chrome-screenshots-f8a0dn/screenshot-1794556181938-1.jpg
+08-consola-metadatos-vm.png|Consola · Metadatos personalizados de la VM: alumno=Karen Meylin Quispe Saavedra y seccion=45104|13/11/2026 02:49:41|/tmp/claude-chrome-screenshots-f8a0dn/screenshot-1794556181938-2.jpg
+09-consola-claves-ssh.png|Consola · Metadatos del proyecto > Claves SSH creadas por gcloud compute ssh|13/11/2026 02:50:32|/tmp/claude-chrome-screenshots-f8a0dn/screenshot-1794556232607-4.jpg
