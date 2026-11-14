@@ -1,0 +1,6 @@
+01-cloudshell-inicio.png|Cloud Shell · datos de la alumna, creación del Usuario 2 (cuenta de servicio) y del bucket|14/11/2026 12:21:40|/tmp/claude-chrome-screenshots-O76gWb/screenshot-1794676900327-17.jpg
+02-cloudshell-conceder-quitar.png|Cloud Shell · Usuario 2 con roles/viewer puede listar; al quitar el rol recibe acceso denegado|14/11/2026 12:21:40|/tmp/claude-chrome-screenshots-O76gWb/screenshot-1794676900327-18.jpg
+03-cloudshell-minimo-privilegio.png|Cloud Shell · Usuario 2 con roles/storage.objectViewer vuelve a leer el archivo de la alumna|14/11/2026 12:24:48|/tmp/claude-chrome-screenshots-O76gWb/screenshot-1794677088903-19.jpg
+04-cloudshell-politica-final.png|Cloud Shell · política IAM final del Usuario 2 y fin del lab|14/11/2026 12:25:04|/tmp/claude-chrome-screenshots-O76gWb/screenshot-1794677104238-20.jpg
+05-consola-cuentas-servicio.png|Consola · cuenta de servicio kquispe-usuario2 (Usuario 2 de Karen Meylin Quispe Saavedra)|14/11/2026 12:35:17|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794677717594-0.jpg
+06-consola-bucket.png|Consola · bucket sc-45104-labs-kquispe-i2l2 con sample.txt (datos de la alumna)|14/11/2026 12:35:58|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794677758205-1.jpg
