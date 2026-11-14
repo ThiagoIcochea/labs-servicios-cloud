@@ -1,0 +1,8 @@
+01-cloudshell-vpc-firewall.png|Cloud Shell · tarea 1: VPC kquispe-desafio-vpc con subredes de producción y desarrollo|14/11/2026 15:56:32|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794689792272-16.jpg
+02-cloudshell-gke-vpc-native.png|Cloud Shell · tareas 2-3: clúster GKE VPC-native en la subred de producción y app en el namespace produccion|14/11/2026 15:56:32|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794689792273-17.jpg
+03-cloudshell-pods-servicio.png|Cloud Shell · pods con IPs del rango secundario 10.20.0.0/16 y Service LoadBalancer|14/11/2026 15:57:00|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794689820073-18.jpg
+04-cloudshell-iam-uptime.png|Cloud Shell · tareas 4-5: acceso de desarrollador al nuevo integrante, retiro del anterior y uptime check|14/11/2026 15:57:00|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794689820073-19.jpg
+05-cloudshell-pagina-cluster.png|Cloud Shell · página de la app con los datos de la alumna y configuración de red del clúster|14/11/2026 15:57:35|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794689855662-20.jpg
+06-consola-subredes.png|Consola VPC · subredes del desafío con rangos secundarios para pods y servicios|14/11/2026 15:58:26|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794689906664-21.jpg
+07-consola-carga-trabajo.png|Consola GKE · carga de trabajo app-desafio en el namespace produccion|14/11/2026 15:58:26|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794689906664-22.jpg
+08-consola-uptime.png|Consola Monitoring · uptime check del desafío de la alumna|14/11/2026 15:59:17|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794689957459-23.jpg
