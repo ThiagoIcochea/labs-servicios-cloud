@@ -1,0 +1,5 @@
+01-cloudshell-rol-personalizado.png|Cloud Shell · creación del rol personalizado «Auditor de Karen Meylin Quispe Saavedra» con 5 permisos|14/11/2026 13:35:28|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794681328306-32.jpg
+02-cloudshell-auditor-lee.png|Cloud Shell · rol asignado: el auditor (cuenta de servicio) lee el informe con los datos de la alumna|14/11/2026 13:35:28|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794681328307-33.jpg
+03-cloudshell-revocado.png|Cloud Shell · rol revocado: el auditor recibe 403 y lista de roles personalizados del proyecto|14/11/2026 13:36:10|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794681370802-34.jpg
+04-consola-rol.png|Consola IAM · detalle del rol personalizado con la descripción de la alumna|14/11/2026 13:36:10|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794681370802-35.jpg
+05-consola-cuentas-servicio.png|Consola IAM · cuenta de servicio «Auditor del lab i3-l1 de Karen Meylin Quispe Saavedra»|14/11/2026 13:37:04|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794681424752-36.jpg
