@@ -1,0 +1,9 @@
+01-cloudshell-vm-apache.png|Cloud Shell · VM kquispe-i3l4-apache con Apache y Ops Agent, y regla de firewall HTTP|14/11/2026 14:33:15|/tmp/claude-chrome-screenshots-1fHwdX/screenshot-1794684795488-18.jpg
+02-cloudshell-metrica-logs.png|Cloud Shell · métrica basada en logs kquispe_i3l4_visitas y generación de tráfico con el user-agent de la alumna|14/11/2026 14:33:15|/tmp/claude-chrome-screenshots-1fHwdX/screenshot-1794684795489-19.jpg
+03-cloudshell-logs.png|Cloud Shell · logs de acceso leídos con gcloud (user-agent con el nombre de la alumna)|14/11/2026 14:33:39|/tmp/claude-chrome-screenshots-1fHwdX/screenshot-1794684819583-20.jpg
+04-cloudshell-dashboard-metrica.png|Cloud Shell · dashboard creado, detalle de la métrica y fin del lab|14/11/2026 14:33:39|/tmp/claude-chrome-screenshots-1fHwdX/screenshot-1794684819583-21.jpg
+05-cloudshell-pagina-apache.png|Cloud Shell · página de Apache con los datos de la alumna y etiquetas de la VM|14/11/2026 15:17:03|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794687423467-5.jpg
+06-consola-dashboard.png|Consola Monitoring · dashboard con la métrica basada en logs y las peticiones de Apache|14/11/2026 15:14:44|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794687284468-0.jpg
+07-consola-panel-logs.png|Consola Monitoring · panel de logs de acceso de Apache dentro del dashboard|14/11/2026 15:15:19|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794687319384-2.jpg
+08-consola-explorador-registros.png|Consola Logging · 180 visitas registradas con el user-agent Evidencia-kquispe|14/11/2026 15:15:57|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794687357100-4.jpg
+09-consola-metricas.png|Consola Logging · métrica definida por el usuario con la descripción de la alumna|14/11/2026 15:15:19|/tmp/claude-chrome-screenshots-zJXnPC/screenshot-1794687319384-3.jpg
