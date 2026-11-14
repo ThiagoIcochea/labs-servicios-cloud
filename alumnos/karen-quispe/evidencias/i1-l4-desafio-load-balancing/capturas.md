@@ -1,0 +1,8 @@
+01-cloudshell-inicio.png|Cloud Shell · inicio del desafío: datos de la alumna y creación del jumphost|14/11/2026 12:09:02|/tmp/claude-chrome-screenshots-O76gWb/screenshot-1794676142494-6.jpg
+02-cloudshell-autoescalado.png|Cloud Shell · MIG kquispe-desafio-mig con autoescalado (mín 2, máx 3, CPU 60 %)|14/11/2026 12:09:02|/tmp/claude-chrome-screenshots-O76gWb/screenshot-1794676142495-7.jpg
+03-cloudshell-firewall-backend-proxy.png|Cloud Shell · regla kquispe-permit-tcp-rule-80, health check, backend, URL map, proxy HTTP y regla de reenvío global|14/11/2026 12:09:29|/tmp/claude-chrome-screenshots-O76gWb/screenshot-1794676169762-8.jpg
+04-cloudshell-pruebas.png|Cloud Shell · el jumphost llega a los backends por IP interna y el balanceador responde|14/11/2026 12:09:29|/tmp/claude-chrome-screenshots-O76gWb/screenshot-1794676169763-9.jpg
+05-consola-instancias.png|Consola · jumphost (con IP externa) y 2 VMs del MIG (solo IP interna)|14/11/2026 12:06:09|/tmp/claude-chrome-screenshots-O76gWb/screenshot-1794675969501-0.jpg
+06-consola-plantilla.png|Consola · plantilla kquispe-desafio-template con etiquetas alumno y seccion|14/11/2026 12:07:42|/tmp/claude-chrome-screenshots-O76gWb/screenshot-1794676062728-1.jpg
+07-consola-mig-autoescalado.png|Consola · MIG kquispe-desafio-mig con escalado automático activo (mín 2, máx 3)|14/11/2026 12:07:42|/tmp/claude-chrome-screenshots-O76gWb/screenshot-1794676062729-2.jpg
+08-consola-backend-saludable.png|Consola · balanceador kquispe-desafio-lb: 2 de 2 backends en buen estado|14/11/2026 12:08:32|/tmp/claude-chrome-screenshots-O76gWb/screenshot-1794676112475-4.jpg
