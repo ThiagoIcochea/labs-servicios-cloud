@@ -1,0 +1,6 @@
+01-cloudshell-redes-firewall.png|Cloud Shell · red VPC personalizada kquispe-managementnet y su subred 10.130.0.0/20|14/11/2026 14:17:01|/tmp/claude-chrome-screenshots-1fHwdX/screenshot-1794683821837-11.jpg
+02-cloudshell-5-vms.png|Cloud Shell · las 5 VMs en sus redes: default, managementnet, privatenet y la appliance con 2 interfaces|14/11/2026 14:17:01|/tmp/claude-chrome-screenshots-1fHwdX/screenshot-1794683821837-12.jpg
+03-cloudshell-conectividad.png|Cloud Shell · pruebas de ping: IPs externas OK; IPs internas solo dentro de la misma VPC|14/11/2026 14:17:22|/tmp/claude-chrome-screenshots-1fHwdX/screenshot-1794683842531-13.jpg
+04-cloudshell-appliance.png|Cloud Shell · VM appliance (2 NIC): llega a ambas VPC por IP interna y su tabla de rutas|14/11/2026 14:17:22|/tmp/claude-chrome-screenshots-1fHwdX/screenshot-1794683842531-14.jpg
+05-consola-redes.png|Consola VPC · redes personalizadas de la alumna (kquispe-managementnet y kquispe-privatenet)|14/11/2026 14:18:54|/tmp/claude-chrome-screenshots-1fHwdX/screenshot-1794683934258-17.jpg
+06-consola-vms.png|Consola Compute Engine · las 5 VMs del lab (la appliance con nic0 y nic1)|14/11/2026 14:18:03|/tmp/claude-chrome-screenshots-1fHwdX/screenshot-1794683883796-16.jpg
