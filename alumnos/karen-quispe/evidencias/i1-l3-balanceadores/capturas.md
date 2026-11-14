@@ -1,0 +1,8 @@
+01-cloudshell-inicio.png|Cloud Shell · inicio del lab y creación de los servidores web kquispe-www1..3|14/11/2026 11:55:08|/tmp/claude-chrome-screenshots-wIV8IR/screenshot-1794675308864-1.jpg
+02-cloudshell-balanceador-red.png|Cloud Shell · IP regional, health check, target pool kquispe-www-pool y regla de reenvío|14/11/2026 11:55:31|/tmp/claude-chrome-screenshots-wIV8IR/screenshot-1794675331151-3.jpg
+03-cloudshell-balanceador-http.png|Cloud Shell · plantilla, grupo administrado kquispe-lb-backend-group y firewall de health checks|14/11/2026 11:55:08|/tmp/claude-chrome-screenshots-wIV8IR/screenshot-1794675308864-2.jpg
+04-cloudshell-pruebas.png|Cloud Shell · respuestas alternando entre www1/www2/www3 y respuesta del MIG por el balanceador HTTP|14/11/2026 11:55:31|/tmp/claude-chrome-screenshots-wIV8IR/screenshot-1794675331151-4.jpg
+05-consola-instancias.png|Consola · 5 VMs: 3 servidores www y 2 VMs del grupo administrado|13/11/2026 03:31:53|/tmp/claude-chrome-screenshots-MFM5oO/screenshot-1794558713216-2.jpg
+06-consola-grupo-instancias.png|Consola · grupo administrado kquispe-lb-backend-group (2 instancias en buen estado)|13/11/2026 03:31:53|/tmp/claude-chrome-screenshots-MFM5oO/screenshot-1794558713217-3.jpg
+07-consola-balanceadores.png|Consola · Balanceo de cargas: kquispe-web-map-http (HTTP) y kquispe-www-pool (red)|13/11/2026 03:32:49|/tmp/claude-chrome-screenshots-MFM5oO/screenshot-1794558769974-4.jpg
+08-consola-backend-saludable.png|Consola · backend del balanceador HTTP: 2 de 2 instancias en buen estado|13/11/2026 03:32:49|/tmp/claude-chrome-screenshots-MFM5oO/screenshot-1794558769975-6.jpg
