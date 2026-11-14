@@ -1,0 +1,6 @@
+01-cloudshell-bucket-topico-permisos.png|Cloud Shell · tareas 1-3: bucket, tópico Pub/Sub, permisos de Eventarc y despliegue de la función|14/11/2026 13:25:47|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794680747832-26.jpg
+02-cloudshell-miniatura-iam.png|Cloud Shell · tareas 4-5: miniatura creada, mensaje Pub/Sub con los datos de la alumna y retiro del ingeniero anterior|14/11/2026 13:25:47|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794680747832-27.jpg
+03-cloudshell-logs.png|Cloud Shell · logs de la función: miniatura creada para Karen Meylin Quispe Saavedra · U22301639|14/11/2026 13:26:49|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794680809150-28.jpg
+04-consola-bucket.png|Consola · bucket con la imagen original y la miniatura 64x64 generada|14/11/2026 13:26:49|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794680809151-29.jpg
+05-consola-activador.png|Consola · activador de Eventarc (google.cloud.storage.object.v1.finalized) sobre el bucket de la alumna|14/11/2026 13:27:55|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794680875658-30.jpg
+06-consola-objeto.png|Consola · detalle del objeto foto-kquispe.png (no público)|14/11/2026 13:27:55|/tmp/claude-chrome-screenshots-wH5JXV/screenshot-1794680875658-31.jpg
