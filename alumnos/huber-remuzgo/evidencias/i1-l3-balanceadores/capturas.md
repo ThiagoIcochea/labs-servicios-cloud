@@ -1,0 +1,9 @@
+01-cloudshell-inicio.png|Cloud Shell · inicio del lab y creación de los servidores web hremuzgo-www1..3|14/11/2026 21:36:02|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794710162743-21.jpg
+02-cloudshell-firewall-http.png|Cloud Shell · regla de firewall HTTP hacia los servidores web|14/11/2026 21:36:14|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794710174933-22.jpg
+03-cloudshell-balanceador-red.png|Cloud Shell · health check, target pool hremuzgo-www-pool, regla de reenvío, plantilla y grupo administrado|14/11/2026 21:36:26|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794710186074-23.jpg
+04-cloudshell-balanceador-http.png|Cloud Shell · firewall de health checks, IP global, backend service, URL map, proxy y regla HTTP|14/11/2026 21:36:49|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794710209850-25.jpg
+05-cloudshell-pruebas-red.png|Cloud Shell · VMs en ejecución y respuestas del balanceador de red alternando entre www1/www2/www3|14/11/2026 21:36:37|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794710197917-24.jpg
+06-cloudshell-pruebas-http.png|Cloud Shell · balanceador HTTP responde con las VMs del grupo administrado; lab terminado|14/11/2026 21:37:30|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794710250266-28.jpg
+07-consola-instancias.png|Consola · 5 VMs: 3 servidores www y 2 VMs del grupo administrado|14/11/2026 21:39:14|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794710354601-29.jpg
+08-consola-balanceadores.png|Consola · Balanceo de cargas: hremuzgo-web-map-http (HTTP) y hremuzgo-www-pool (red)|14/11/2026 21:39:37|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794710377379-30.jpg
+09-consola-grupo-instancias.png|Consola · grupo administrado hremuzgo-lb-backend-group (2 instancias en buen estado)|14/11/2026 21:40:03|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794710403523-31.jpg
