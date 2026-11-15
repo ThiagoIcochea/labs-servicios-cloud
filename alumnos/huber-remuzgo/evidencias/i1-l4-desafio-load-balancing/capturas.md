@@ -1,0 +1,8 @@
+01-cloudshell-inicio.png|Cloud Shell · inicio del desafío: datos del alumno y creación del jumphost|14/11/2026 21:51:24|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794711084713-32.jpg
+02-cloudshell-autoescalado.png|Cloud Shell · MIG hremuzgo-desafio-mig con autoescalado (mín 2, máx 3, CPU 60 %)|14/11/2026 21:51:40|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794711100138-33.jpg
+03-cloudshell-firewall-backend-proxy.png|Cloud Shell · regla hremuzgo-permit-tcp-rule-80, health check, backend, URL map, proxy HTTP y regla de reenvío global|14/11/2026 21:51:51|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794711111316-34.jpg
+04-cloudshell-pruebas.png|Cloud Shell · el jumphost llega a los backends por IP interna y el balanceador responde|14/11/2026 21:52:02|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794711122024-35.jpg
+05-consola-instancias.png|Consola · jumphost (con IP externa) y 2 VMs del MIG (solo IP interna)|14/11/2026 21:53:05|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794711185878-36.jpg
+06-consola-mig-autoescalado.png|Consola · MIG hremuzgo-desafio-mig con escalado automático activo (mín 2, máx 3)|14/11/2026 21:53:31|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794711211301-37.jpg
+07-consola-balanceador.png|Consola · balanceador hremuzgo-desafio-lb: frontend HTTP y reglas de host y ruta|14/11/2026 21:53:56|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794711236133-38.jpg
+08-consola-backend-saludable.png|Consola · backend hremuzgo-desafio-backend: 2 de 2 instancias en buen estado, escalado automático activado|14/11/2026 21:54:08|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794711248394-39.jpg
