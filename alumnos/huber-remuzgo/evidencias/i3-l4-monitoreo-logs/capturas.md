@@ -1,0 +1,6 @@
+01-cloudshell-vm-apache.png|Cloud Shell · VM hremuzgo-i3l4-apache con Apache y Ops Agent, firewall HTTP y métrica basada en logs|15/11/2026 06:43:00|/tmp/claude-chrome-screenshots-Juz8pJ/screenshot-1794742980064-9.jpg
+02-cloudshell-metrica.png|Cloud Shell · métrica hremuzgo_i3l4_visitas con el nombre del alumno|15/11/2026 06:53:36|/tmp/claude-chrome-screenshots-Juz8pJ/screenshot-1794743616845-12.jpg
+03-cloudshell-logs-dashboard.png|Cloud Shell · logs de acceso con el user-agent del alumno, dashboard y fin del lab|15/11/2026 06:53:36|/tmp/claude-chrome-screenshots-Juz8pJ/screenshot-1794743616844-11.jpg
+04-consola-dashboard.png|Consola Monitoring · dashboard con la métrica basada en logs y las peticiones de Apache|15/11/2026 06:54:40|/tmp/claude-chrome-screenshots-Juz8pJ/screenshot-1794743680502-15.jpg
+05-consola-explorador-registros.png|Consola Logging · visitas registradas con el user-agent Evidencia-hremuzgo|15/11/2026 06:55:30|/tmp/claude-chrome-screenshots-Juz8pJ/screenshot-1794743730717-18.jpg
+06-consola-metricas.png|Consola Logging · métrica definida por el usuario con la descripción del alumno|15/11/2026 06:54:40|/tmp/claude-chrome-screenshots-Juz8pJ/screenshot-1794743680502-16.jpg
