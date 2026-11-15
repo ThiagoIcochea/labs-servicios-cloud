@@ -1,0 +1,6 @@
+01-cloudshell-inicio.png|Cloud Shell · creación del Usuario 2 (cuenta de servicio) y del bucket con el archivo del alumno|14/11/2026 22:11:47|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794712307307-48.jpg
+02-cloudshell-conceder-quitar.png|Cloud Shell · Usuario 2 con roles/viewer puede listar; al quitar el rol recibe acceso denegado|14/11/2026 22:12:02|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794712322512-49.jpg
+03-cloudshell-minimo-privilegio.png|Cloud Shell · Usuario 2 con roles/storage.objectViewer vuelve a leer el archivo del alumno|14/11/2026 22:12:15|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794712335858-50.jpg
+04-cloudshell-politica-final.png|Cloud Shell · contenido leído por el Usuario 2, política IAM final y fin del lab|14/11/2026 22:11:27|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794712287441-47.jpg
+05-consola-cuentas-servicio.png|Consola · cuenta de servicio hremuzgo-usuario2 (Usuario 2 de Huber Eduardo Remuzgo Tovar)|14/11/2026 22:13:09|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794712389064-51.jpg
+06-consola-bucket.png|Consola · bucket sc-45104-labs-hremuzgo-i2l2 con sample.txt (datos del alumno)|14/11/2026 22:13:38|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794712418439-52.jpg
