@@ -1,0 +1,7 @@
+01-cloudshell-estado-local.png|Estado local: terraform apply crea el bucket del estado con las etiquetas del alumno|14/11/2026 20:25:13|/tmp/claude-chrome-screenshots-PoQ2CQ/screenshot-1794705913983-8.jpg
+02-cloudshell-estado-remoto.png|Estado migrado al backend gcs, refresh tras un cambio fuera de Terraform e inicio de la importación|14/11/2026 20:25:20|/tmp/claude-chrome-screenshots-PoQ2CQ/screenshot-1794705920277-9.jpg
+03-cloudshell-generate-config.png|VM creada con gcloud fuera de Terraform y bloque import hacia google_compute_instance.importada|14/11/2026 20:26:16|/tmp/claude-chrome-screenshots-PoQ2CQ/screenshot-1794705976282-12.jpg
+04-cloudshell-state-importada.png|Importación completada y terraform state list con la VM importada y el bucket del estado|14/11/2026 20:25:42|/tmp/claude-chrome-screenshots-PoQ2CQ/screenshot-1794705942126-10.jpg
+05-cloudshell-state-remoto.png|Archivo de estado remoto (serial 4) leído desde el bucket|14/11/2026 20:25:48|/tmp/claude-chrome-screenshots-PoQ2CQ/screenshot-1794705948559-11.jpg
+06-consola-tfstate.png|Consola Cloud Storage: default.tfstate en terraform/estado/kquispe|14/11/2026 20:27:07|/tmp/claude-chrome-screenshots-PoQ2CQ/screenshot-1794706027111-13.jpg
+07-consola-vm-importada.png|Consola Compute Engine: VM kquispe-i4l4-importada (creada con gcloud, ahora gestionada por Terraform)|14/11/2026 20:27:51|/tmp/claude-chrome-screenshots-PoQ2CQ/screenshot-1794706071438-15.jpg
