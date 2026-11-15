@@ -1,0 +1,2 @@
+01-cloudshell-inicio.png|Cloud Shell · inicio del lab y creación del bucket gs://sc-45104-labs-hremuzgo-i2l1|14/11/2026 21:58:40|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794711520184-40.jpg
+02-cloudshell-subida-descarga.png|Cloud Shell · subida de objetos, descarga de evidencia.txt con los datos del alumno y copia a carpetas|14/11/2026 21:58:54|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794711534022-41.jpg
