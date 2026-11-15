@@ -1,0 +1,5 @@
+01-cloudshell-auditor-lee.png|Cloud Shell · rol asignado: el auditor lee el informe con los datos del alumno|14/11/2026 23:55:10|/tmp/claude-chrome-screenshots-FhZToO/screenshot-1794718510218-6.jpg
+02-cloudshell-rol-personalizado.png|Cloud Shell · rol personalizado «Auditor de Huber Eduardo Remuzgo Tovar» con 5 permisos|14/11/2026 22:59:54|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794715194106-86.jpg
+03-cloudshell-revocado.png|Cloud Shell · rol revocado: el auditor recibe 403 y lista de roles personalizados|14/11/2026 22:59:54|/tmp/claude-chrome-screenshots-nCJewO/screenshot-1794715194106-87.jpg
+04-consola-rol.png|Consola IAM · detalle del rol personalizado con la descripción del alumno|14/11/2026 23:53:49|/tmp/claude-chrome-screenshots-FhZToO/screenshot-1794718429970-3.jpg
+05-consola-cuentas-servicio.png|Consola IAM · cuenta de servicio «Auditor del lab i3-l1 de Huber Eduardo Remuzgo Tovar»|14/11/2026 23:53:26|/tmp/claude-chrome-screenshots-FhZToO/screenshot-1794718406862-2.jpg
