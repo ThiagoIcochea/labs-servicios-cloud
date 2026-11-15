@@ -2,3 +2,6 @@
 02-cloudshell-exportar-tablas.png|Cloud Shell · tablas del dataset hremuzgo_i3l2_bicis|15/11/2026 00:12:29|/tmp/claude-chrome-screenshots-FhZToO/screenshot-1794719549190-10.jpg
 03-cloudshell-crear-cloudsql.png|Cloud SQL · creación de la instancia hremuzgo-i3l2-mysql|15/11/2026 00:12:29|/tmp/claude-chrome-screenshots-FhZToO/screenshot-1794719549190-8.jpg
 04-cloudshell-cloudsql-consultas.png|Cloud SQL (MySQL) · tabla evidencia con los datos del alumno, importación y consultas|15/11/2026 00:12:29|/tmp/claude-chrome-screenshots-FhZToO/screenshot-1794719549189-7.jpg
+05-consola-dataset.png|Consola BigQuery · dataset hremuzgo_i3l2_bicis con sus dos tablas|15/11/2026 06:16:46|/tmp/claude-chrome-screenshots-Juz8pJ/screenshot-1794741406949-0.jpg
+06-consola-cloudsql.png|Consola Cloud SQL · instancia hremuzgo-i3l2-mysql (MySQL 8.0) en ejecución|15/11/2026 06:17:45|/tmp/claude-chrome-screenshots-Juz8pJ/screenshot-1794741465034-1.jpg
+07-consola-bases-datos.png|Consola Cloud SQL · base de datos bike creada en el lab|15/11/2026 06:18:18|/tmp/claude-chrome-screenshots-Juz8pJ/screenshot-1794741498746-2.jpg
