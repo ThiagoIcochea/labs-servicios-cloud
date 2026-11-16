@@ -4,3 +4,5 @@
 04-consola-instancias.png|Consola · Compute Engine > Instancias de VM (prefijo cgonzales)|15/11/2026 20:13:07|/tmp/claude-chrome-screenshots-dKspRx/screenshot-1794791587663-18.jpg
 05-consola-detalle-vm.png|Consola · Detalle de la VM cgonzales-i1l1-web|15/11/2026 20:13:07|/tmp/claude-chrome-screenshots-dKspRx/screenshot-1794791587664-19.jpg
 06-consola-etiquetas.png|Consola · Etiquetas de la VM: alumno=cgonzales, seccion=45104, curso=servicios-cloud, lab=i1l1|15/11/2026 20:13:07|/tmp/claude-chrome-screenshots-dKspRx/screenshot-1794791587664-20.jpg
+07-consola-codigo-equivalente.png|Consola · Código equivalente (JSON) de la VM cgonzales-i1l1-web|15/11/2026 20:14:18|/tmp/claude-chrome-screenshots-dKspRx/screenshot-1794791658374-22.jpg
+08-consola-firewall.png|Consola · Regla de firewall cgonzales-i1l1-http con la descripción del lab del alumno|15/11/2026 20:14:18|/tmp/claude-chrome-screenshots-dKspRx/screenshot-1794791658375-24.jpg
